@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>Sell page</title>
+</head>
+<body>
+    <div>
+        <form action="/logout" method="POST">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Create new property for sale</h2>
+        <a href="/sellerHome/create">Create a new property listing</a>
+    </div>
+    
+     <!-- add housing type/ price of property / housing location in the header -->
+    <div>
+        <h2>Draft property article</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Created</th>
+                    <th>Last Modified</th>
+                    <th>State</th>
+                    <th>location</th>
+                    <th>Housing type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% draftArticles.forEach(article => { %>
+                <tr>
+                    <td><%= article.title %></td>
+                    <td><%= article.creation_date %></td>
+                    <td><%= article.last_modified_date %></td>
+                    <td><%= article.state %></td>
+                    <td><%= article.location %></td>
+                    <td><%= article.housingType %></td>
+                    <td><%= article.status %></td>
+                    <td>
+                        <a href="/editArticle/<%= article.id %>">Edit</a>
+                        <form action="/sellerHome/publish/<%= article.id %>" method="POST" style="display:inline;">
+                            <button type="submit">Publish</button>
+                        </form>
+                        <form action="/sellerHome/delete/<%= article.id %>" method="POST" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>Published property article</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Created</th>
+                    <th>Published</th>
+                    <th>Housing type</th>
+                    <th>status </th>
+                    <th>To article</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% publishedArticles.forEach(article => { %>
+                <tr>
+                    <td><%= article.title %></td>
+                    <td><%= article.creation_date %></td>
+                    <td><%= article.published_date %></td>
+                    <td><%= article.housingType %></td>
+                    <td><%= article.status %></td>
+                    <td><a href="/attEvent/<%= article.id %>">Article Page</a></td>
+                    <td>
+                        <form action="/viewBooking/<%= article.id %>" method="POST" style="display:inline;">
+                            <button type="submit">View buyers information</button>
+                        </form>
+                        <form action="/sellerHome/delete/<%= article.id %>" method="POST" style="display:inline;">
+                            <button type="submit">Delete article</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

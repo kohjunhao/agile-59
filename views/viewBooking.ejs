@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <title>Viewbooking page</title>
+</head>
+<body>
+    <div>
+        <form action="/logout" method="POST">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+    
+    <div>
+        <h1>View Booking</h1>
+    </div> 
+
+    <div>
+        <h2>Bookings for <%= event.title %></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Buyer Name</th>
+                    <th>Ticket Type</th>
+                    <th>Tickets Bought</th>
+                    <th>Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (bookings.length === 0) { %>
+                <tr>
+                    <td colspan="4" style="text-align: center;">No data available</td>
+                </tr>
+                <% } else { %>
+                <% bookings.forEach(booking => { %>
+                <tr>
+                    <td><%= event.title %></td>
+                    <td><%= booking.buyer_name %></td>
+                    <td><%= booking.ticket_type %></td>
+                    <td><%= booking.tickets_bought %></td>
+                    <td>$<%= booking.revenue.toFixed(2) %></td>
+                </tr>
+                <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+        <form action="/organiserHome" method="GET">
+            <button type="submit">Back to Organiser Home</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+

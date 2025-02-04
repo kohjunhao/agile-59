@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>Event edit Page</title>
+</head>
+<body>
+    <div>
+        <!-- remove the time/tickets parts -->
+        <!-- add in property insight/details/amenties/factities/pricing of the house/ location/ housing type/seller name / seller details/ contract num -->
+        <!-- insert img and store in database and display on user side -->
+        <h1>Organiser Edit Event Page</h1>
+        <p>Event Creation Date: <%= event.creation_date %></p>
+        <form action="/editEvent/<%= event.id %>" method="POST">
+            <label for="title">Event Title:</label>
+            <input type="text" id="title" name="title" value="<%= event.title %>" required><br>
+    
+            <label for="description">Event Description:</label>
+            <textarea id="description" name="description" required><%= event.description %></textarea><br>
+
+            <label for="event_date">Event Date:</label>
+            <input type="date" id="event_date" name="event_date" value="<%= event.event_date %>" required min="<%= new Date().toISOString().split('T')[0] %>"><br>
+
+            <label for="event_time">Event Time:</label>
+            <input type="time" id="event_time" name="event_time" value="<%= event.event_time %>" required><br>
+    
+            <label for="full_price_tickets">Number of Full-Price Tickets:</label>
+            <input type="number" id="full_price_tickets" name="full_price_tickets" value="<%= event.full_price_tickets %>" min="0" required><br>
+    
+            <label for="full_price_ticket_price">Price of Full-Price Tickets:</label>
+            <input type="number" step="0.01" id="full_price_ticket_price" name="full_price_ticket_price" value="<%= event.full_price_ticket_price %>" min="0" required><br>
+    
+            <label for="concession_tickets">Number of Concession Tickets:</label>
+            <input type="number" id="concession_tickets" name="concession_tickets" value="<%= event.concession_tickets %>" min="0" required><br>
+    
+            <label for="concession_ticket_price">Price of Concession Tickets:</label>
+            <input type="number" step="0.01" id="concession_ticket_price" name="concession_ticket_price" value="<%= event.concession_ticket_price %>" min="0" required><br>
+    
+            <button type="submit">Submit Changes</button>
+        </form>
+
+        <form action="/organiserHome" method="GET">
+            <button type="submit">Back to Home</button>
+        </form>
+    </div>
+    
+</body>
+</html>

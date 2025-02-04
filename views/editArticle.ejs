@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>Sell article edit Page</title>
+</head>
+<body>
+    <div>
+        <h1> property article creation/edit Page</h1>
+        <p>Article Creation Date: <%= article.creation_date %></p>
+        <form action="/editArticle/<%= article.id %>" method="POST" enctype="multipart/form-data">
+            
+            <label for="title">Property Image:</label>
+            <input type="file" id="image" name="image" accept="image/*"><br>
+
+            <label for="title">Property Title:</label>
+            <input type="text" id="title" name="title" value="<%= article.title %>" required><br>
+    
+            <label for="description">Property Description:</label>
+            <textarea id="description" name="description" required><%= article.description %></textarea><br>
+
+            <label for="insight">Property insight:</label>
+            <textarea id="insight" name="insight" required><%= article.insight %></textarea><br>
+
+            <label for="amenities">Property amenities:</label>
+            <textarea id="amenities" name="amenities" required><%= article.amenities %></textarea><br>
+
+            <label for="facilities">Property facilities:</label>
+            <textarea id="facilities" name="facilities" required><%= article.facilities %></textarea><br>
+
+            <label for="location">location:</label>
+            <input type="text" id="location" name="location" value="<%= article.location %>" required><br>
+
+            <label for="housingType">Housing Type:</label>
+            <select id="housingType" name="housingType" required>
+              <option value="HDB" <%= article.housingType === "HDB" ? "selected" : "" %>>HDB</option>
+              <option value="Condo" <%= article.housingType === "Condo" ? "selected" : "" %>>Condo</option>
+              <option value="Private Property" <%= article.housingType === "Private Property" ? "selected" : "" %>>Private Property</option>
+              <option value="Others" <%= article.housingType === "Others" ? "selected" : "" %>>Others</option>
+            </select><br>
+
+            <label for="sellerName">Seller Name:</label>
+            <input type="text" id="sellerName" name="sellerName" value="<%= article.sellerName %>" required><br>
+
+            <label for="sellerDetails">Seller details:</label>
+            <textarea id="sellerDetails" name="sellerDetails" required><%= article.sellerDetails %></textarea><br>
+
+            <label for="">Contact Number:</label>
+            <input type="text" id="contactNumber" name="contactNumber" pattern="\d{10}" value="<%= article.contactNumber%>" required><br>
+
+            <label for="status">House Status:</label>
+            <select id="status" name="status" required>
+              <option value="Buy" <%= article.status === "Buy" ? "selected" : "" %>>Buy</option>
+              <option value="Rent" <%= article.status === "Rent" ? "selected" : "" %>>Rent</option>
+            </select><br>
+    
+            <button type="submit">Submit Changes</button>
+        </form>
+
+        <form action="/sellerHome" method="GET">
+            <button type="submit">Back to sell home</button>
+        </form>
+    </div>
+    
+</body>
+</html>

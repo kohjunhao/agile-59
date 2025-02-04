@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>attendee event page</title>
+  </head>
+  <body>
+    <div>
+        <h1>Attendee Event Page</h1>
+    </div>
+
+    <div>
+      <h2><%= event.title %></h2>
+      <p><strong>Description:</strong> <%= event.description %></p>
+      <p><strong>Date:</strong> <%= event.event_date %></p>
+      <p><strong>Time:</strong> <%= event.event_time %></p>
+      <br>
+
+      <h2>Ticket booking</h2>
+
+      <% if (event.full_price_tickets > 0) { %>
+      <p>
+        <strong>Full Price Tickets:</strong> $<%= event.full_price_ticket_price
+        %> (<%= event.full_price_tickets %> available)
+      </p>
+      <% } else { %>
+      <p><strong>Full Price Tickets:</strong> Sold Out</p>
+      <% } %> <% if (event.concession_tickets > 0) { %>
+      <p>
+        <strong>Concession Tickets:</strong> $<%= event.concession_ticket_price
+        %> (<%= event.concession_tickets %> available)
+      </p>
+      <% } else { %>
+      <p><strong>Concession Tickets:</strong> Sold Out</p>
+      <% } %> <% if (event.full_price_tickets > 0 || event.concession_tickets >
+      0) { %>
+      <form action="/attEvent/book/<%= event.id %>" method="POST">
+        <label for="name">Your Name here:</label>
+        <input type="text" id="name" name="name" required />
+
+        <% if (event.full_price_tickets > 0) { %>
+        <label for="fullPrice">Full Price Tickets:</label>
+        <input
+          type="number"
+          id="fullPrice"
+          name="fullPrice"
+          min="0"
+          max="<%= event.full_price_tickets %>"
+          required
+        />
+        <% } %> <% if (event.concession_tickets > 0) { %>
+        <label for="concession">Concession Tickets:</label>
+        <input
+          type="number"
+          id="concession"
+          name="concession"
+          min="0"
+          max="<%= event.concession_tickets %>"
+          required
+        />
+        <% } %>
+
+        <button type="submit">Book tickets</button>
+      </form>
+      <% } else { %>
+      <p><strong>All ticket types are sold out.</strong></p>
+      <% } %>
+
+      <form action="/attendeeHome" method="GET">
+        <button type="submit">Back to Home</button>
+      </form>
+
+    </div>
+
+  </body>
+</html>

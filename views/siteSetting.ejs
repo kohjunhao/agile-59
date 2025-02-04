@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>Site setting page</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1>Site Settings</h1>
+        <form id="siteSettingForm" action="/siteSetting" method="POST">
+          <label for="name">Site Name:</label>
+          <br>
+          <input type="text" id="name" name="name" value="<%= siteName %>" required/>
+          <br />
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="3" required><%= siteDescription %></textarea>
+          <br />
+          <button type="submit">Save Settings</button>
+        </form>
+        <br />
+        <form action="/organiserHome" method="GET">
+          <button type="submit">Back to Home</button>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <!--  icon font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>Main page</title>
+    
+</head>
+<body>
+    <header>
+        <div>
+            <!-- logo -->
+            <div>
+                <a href="/"><img src="" alt="logo" ></a>
+            </div>
+
+            <div>
+                <a href="/">Home</a>
+                <a href="/buyRentHome">Buy/rent</a>
+                <a href="/sellerHome">Sell</a>
+                <a href="/">New projects</a>
+                <a href="/tools">Tools</a>
+                <a href="/">Find agent</a>
+            </div>
+            
+            <!-- login -->
+            <div>
+                <a href="/login">Login</a>
+            </div>
+
+        </div>
+    </header>
+
+    <h1>Home main</h1>
+    <!--search bar-->
+    <div></div>
+    
+    <br>
+    <!--Image slider-->
+    <div class="imgslider-container">
+         <div class="slide fade">
+          <img src="" alt="house1">
+         </div>
+
+         <div class="slide fade">
+          <img src="" alt="house2" >
+         </div>
+
+         <div class="slide fade">
+          <img src="" alt="house3">
+         </div>
+
+         <a class="prev" onclick="changeImg(-1)">&#10094;</a>
+         <a class="next" onclick="changeImg(1)">&#10095;</a>
+    </div>
+    
+    <br>
+     <!--image sider button-->
+    <div class="dotcontainer">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <br>
+
+    <div>
+        <ul>
+            <li><a href="/organiserHome">Organiser Page</a></li>
+            <li><a href="/attendeeHome">Attendee Page</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <div>
+            <h1>Latest projects</h1>
+        </div>
+        
+        <!--handle bar content-->
+        <div>
+            <h1>Latest projects</h1>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h1>Featured property</h1>
+        </div>
+        
+        <!--handle bar content-->
+        <div>
+            <h1>Latest projects</h1>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h1>Recommandations</h1>
+        </div>
+        
+        <!--handle bar content-->
+        <div>
+            <h1>Latest projects</h1>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class=>
+          <div>
+            <P>Follow our offical social media accounts:</P>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+           </div>
+         
+           <div class="footer-col">
+            <ul>
+                <li><a href="#">New Projects</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="#">Find Agents</a></li>
+            </ul>
+           </div>
+
+           <div class="footer-col">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">privacy Policy</a></li>
+                <li><a href="#">Term of Service</a></li>
+            </ul>
+           </div>
+
+           <div class="footer-col">
+            <ul>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Linceses</a></li>
+                <li><a href="#">Mobile App</a></li>
+                <li><a href="#">Term of Service</a></li>
+            </ul>
+           </div>
+   
+           <div class="footer-bottom">
+            <p><small>&copy;xxxx. All right reserve. Images are for illustrative purposes.Terms and conditions apply</small></p>
+           </div>
+   
+        </div>
+    </footer>
+
+
+    <script>
+     ///JS for slider///
+     // Initialize the page index to 1 and display the first slide
+     let pageIndex = 1;
+     displaySlides(pageIndex);
+  
+     // Function to change the image slide 
+     function changeImg(n) {
+         displaySlides(pageIndex += n);
+        }
+  
+     // Function to show a specific slide when a dot is clicked
+     function currentSlide(n) {
+         displaySlides(pageIndex = n);
+        }
+  
+     // Function to display the slides
+     function displaySlides(n) {
+     let i;
+     let slides = document.getElementsByClassName("slide");
+     let dots = document.getElementsByClassName("dot");
+
+     // Check if n is out of bounds and adjust pageIndex accordingly
+     if (n > slides.length) {pageIndex = 1}    
+     if (n < 1) {pageIndex = slides.length}
+
+     // Hide the slides
+     for (i = 0; i < slides.length; i++) {
+         slides[i].style.display = "none";  
+        }
+
+     // Remove the "active" class from all dots
+     for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+     // Display the current slide and 
+     slides[pageIndex-1].style.display = "block";
+
+     //Mark the corresponding dot as "active"
+     dots[pageIndex-1].className += " active";  
+     }
+    </script>
+    
+</body>
+</html>
