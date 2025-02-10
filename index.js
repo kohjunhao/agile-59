@@ -120,6 +120,9 @@ app.use('/buyRentHome', buyRentHomeRoutes);
 const attendeeEventRoute = require('./routes/attEvent');
 app.use('/attEvent', attendeeEventRoute);
 
+const buyRentArticleRoute = require('./routes/buyRentArticle');
+app.use('/buyRentArticle', buyRentArticleRoute);
+
 const toolsRoute = require('./routes/tools');
 app.use('/tools', toolsRoute);
 
@@ -128,7 +131,7 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
 
-sfdfdf
+
 
 
 

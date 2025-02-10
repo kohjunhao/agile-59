@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header styling */
+
+
+/* footer styling */
+
+
+/* reccomand styling */
+
+.RecommandationsArticleContainer{
+    display: flexbox;
+    width: 100%;
+    height: auto;
+}
+
+.RecommandationsArticleContainer .recheader h3{
+    padding-left: 0.5rem;
+}
+
+.RecommandationsArticleContainer .RecommandContainer{
+    display: grid;
+    grid:auto/auto auto auto;
+    grid-gap: 1.5rem;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.recarticle a{
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.recarticle .imgcontainer{
+    margin-bottom: 0.5rem;
+    height: auto;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.recarticle:hover .imgcontainer{
+    transform: scale(1.1);
+}
+
+.recarticle img{
+    display: flexbox;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.recarticle h3{
+    display: flexbox;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.recarticle p{
+    display: flexbox;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* FQA styling */
+
+.QAsectioncontainer .QAheader h3{
+    padding-left: 0.5rem;
+}
+
+.QA{
+    width: 90%;
+    max-width: 9999px;
+    padding-left: 0.5rem;
+}
+
+.QA-item{
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.QA-item-header{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.QA-item-header::after{
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.QA-item-header.active::after{
+    content: "\2212";
+}
+
+.QA-item-body{
+    max-height: 0;
+    overflow: hidden;
+
+} 
+
+.QA-item-body-content{
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right);
+}
+

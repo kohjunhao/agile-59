@@ -7,6 +7,10 @@
     <!--  icon font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>Main page</title>
+    <!--Handlebars-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" 
+    integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
 </head>
 <body>
@@ -74,38 +78,74 @@
         </ul>
     </div>
 
-    <div>
-        <div>
-            <h1>Latest projects</h1>
+    <div class="LatestProjectsContainer">
+        <div class="latheader">
+          <h2>Latest projects</h2>
         </div>
-        
-        <!--handle bar content-->
-        <div>
-            <h1>Latest projects</h1>
+  
+        <div class="LastestContainer" id="latproj-container">
+          <script id="LastestsTemplate" type="text/x-handlebars-template">
+            {{#each LatestProjects}}
+              <div class="latproject">
+                <div class="imgcontainer">
+                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+                </div>
+                <a href="{{link}}"><h3>{{title}}</h3></a>
+                <a href="{{link}}"><p>{{context}}</p></a>
+                <a href="{{link}}"><p>{{title}}</p></a>
+              </div>
+            {{/each}}
+          </script>
         </div>
     </div>
 
-    <div>
-        <div>
-            <h1>Featured property</h1>
+
+    <div class="FeaturePropertyContainer">
+        <div class="featheader">
+          <h2>Feature property</h2>
         </div>
-        
-        <!--handle bar content-->
-        <div>
-            <h1>Latest projects</h1>
+  
+        <div class="FeatureContainer" id="featprop-container">
+          <script id="featuresTemplate" type="text/x-handlebars-template">
+            {{#each FeatureProperties}}
+              <div class="featproperty">
+                <div class="imgcontainer">
+                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+                </div>
+                <a href="{{link}}"><h3>{{title}}</h3></a>
+                <a href="{{link}}"><p>{{context}}</p></a>
+                <a href="{{link}}"><p>{{title}}</p></a>
+              </div>
+            {{/each}}
+          </script>
         </div>
     </div>
 
-    <div>
-        <div>
-            <h1>Recommandations</h1>
+    <br>
+
+    <div class="RecommandationsArticleContainer">
+        <div class="recheader">
+          <h2>Recommandations</h2>
         </div>
-        
-        <!--handle bar content-->
-        <div>
-            <h1>Latest projects</h1>
+  
+        <div class="RecommandContainer" id="recarticle-container">
+          <!-- recommanded article put here using dummy articles(mustacha)??? -->
+          <script id="recommandationsTemplate" type="text/x-handlebars-template">
+            {{#each RecommandationArticles}}
+              <div class="recarticle">
+                <div class="imgcontainer">
+                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+                </div>
+                <a href="{{link}}"><h3>{{title}}</h3></a>
+                <a href="{{link}}"><p>{{context}}</p></a>
+                <a href="{{link}}"><p>{{title}}</p></a>
+              </div>
+            {{/each}}
+          </script>
         </div>
     </div>
+
+    <br>
 
     <!-- footer -->
     <footer>
@@ -194,6 +234,163 @@
      //Mark the corresponding dot as "active"
      dots[pageIndex-1].className += " active";  
      }
+
+
+
+      // handle bar for Latest project
+      document.addEventListener("DOMContentLoaded", function () {
+        var latArr = {
+            LatestProjects: [
+            {
+              link: "#",
+              altText: "latest project 1",
+              img: "./image/venus-flytrap.jpg",
+              title: "Venus Flytrap: Natures Carnivorous Marvel",
+              context:
+                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+              name: "Admin",
+              date: "14/Sep/2025",
+            },
+            {
+              link: "#",
+              altText: "latest project 2",
+              img: "./image/polar-bear.jpg",
+              title: "The Enigmatic World of Polar Bears",
+              context:
+                "Explore the resilient life of polar bears in the Arctic wilderness.",
+              name: "Admin",
+              date: "09/Nov/2025",
+            },
+            {
+              link: "#",
+              altText: "latest project 3",
+              img: "./image/pelican.jpg",
+              title: "Majestic Pelicans: Masters of Aerial Grace",
+              context:
+                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+              name: "Admin",
+              date: "14/Jun/2025",
+            }
+
+          ],
+        };
+
+        // Get the Handlebars template
+        var latestSource = document.getElementById("LastestsTemplate").innerHTML;
+        var latestTemplate = Handlebars.compile(latestSource);
+
+        // Render the template with data
+        var latestProjects = latestTemplate(latArr);
+
+        // Append the rendered object to container
+        document.querySelector("#latproj-container").innerHTML =
+        latestProjects;
+      });
+
+
+
+      // handle bar for feature property
+      document.addEventListener("DOMContentLoaded", function () {
+        var featArr = {
+            FeatureProperties: [
+            {
+              link: "#",
+              altText: "feature property 1",
+              img: "./image/venus-flytrap.jpg",
+              title: "Venus Flytrap: Natures Carnivorous Marvel",
+              context:
+                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+              name: "Admin",
+              date: "14/Sep/2025",
+            },
+            {
+              link: "#",
+              altText: "feature property 2",
+              img: "./image/polar-bear.jpg",
+              title: "The Enigmatic World of Polar Bears",
+              context:
+                "Explore the resilient life of polar bears in the Arctic wilderness.",
+              name: "Admin",
+              date: "09/Nov/2025",
+            },
+            {
+              link: "#",
+              altText: "feature property 3",
+              img: "./image/pelican.jpg",
+              title: "Majestic Pelicans: Masters of Aerial Grace",
+              context:
+                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+              name: "Admin",
+              date: "14/Jun/2025",
+            }
+
+          ],
+        };
+
+        // Get the Handlebars template
+        var featureSource = document.getElementById("featuresTemplate").innerHTML;
+        var featureTemplate = Handlebars.compile(featureSource);
+
+        // Render the template with data
+        var featureProperties = featureTemplate(featArr);
+
+        // Append the rendered object to container
+        document.querySelector("#featprop-container").innerHTML =
+        featureProperties;
+      });
+
+
+      // handle bar for Recommandations
+      document.addEventListener("DOMContentLoaded", function () {
+        var recArr = {
+          RecommandationArticles: [
+            {
+              link: "#",
+              altText: "property recommandation 1",
+              img: "./image/venus-flytrap.jpg",
+              title: "Venus Flytrap: Natures Carnivorous Marvel",
+              context:
+                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+              name: "Admin",
+              date: "14/Sep/2025",
+            },
+            {
+              link: "#",
+              altText: "property recommandation 2",
+              img: "./image/polar-bear.jpg",
+              title: "The Enigmatic World of Polar Bears",
+              context:
+                "Explore the resilient life of polar bears in the Arctic wilderness.",
+              name: "Admin",
+              date: "09/Nov/2025",
+            },
+            {
+              link: "#",
+              altText: "property recommandation 3",
+              img: "./image/pelican.jpg",
+              title: "Majestic Pelicans: Masters of Aerial Grace",
+              context:
+                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+              name: "Admin",
+              date: "14/Jun/2025",
+            }
+
+          ],
+        };
+
+        // Get the Handlebars template
+        var recommandSource = document.getElementById("recommandationsTemplate").innerHTML;
+        var recommandTemplate = Handlebars.compile(recommandSource);
+
+        // Render the template with data
+        var recommandArticles = recommandTemplate(recArr);
+
+        // Append the rendered object to container
+        document.querySelector("#recarticle-container").innerHTML =
+        recommandArticles;
+      });
+
+
     </script>
     
 </body>
