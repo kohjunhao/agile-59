@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/buyRentArticle.css" />
+    <title>call displaying page</title>
+  </head>
+  <body>
+
+    <header>
+      <div>
+          <!-- logo -->
+          <div>
+              <a href="/"><img src="" alt="logo" ></a>
+          </div>
+
+          <div>
+              <a href="/">Home</a>
+              <a href="/buyRentHome">Buy/rent</a>
+              <a href="/sellerHome">Sell</a>
+              <a href="/">New projects</a>
+              <a href="/tools">Tools</a>
+              <a href="/">Find agent</a>
+          </div>
+          
+          <!-- log out -->
+          <div>
+            <form action="/logout" method="POST">
+              <button type="submit">Log Out</button>
+            </form>
+          </div>
+
+      </div>
+    </header>
+
+    <div>
+        <div>
+            <h2> Seller's contect info </h2>
+        </div>
+
+        <div>
+            <% if (user) { %>
+                <P>Thank you for using the seller service, <%= user.user_name %>!</p>
+                <p><%= seller.sellerName %> Contact Number: <%= seller.contactNumber %></p>
+              <% } else { %>
+                <p>You must be logged in to access this page.</p>
+              <% } %>
+        </div>
+    </div>
+  </body>
+</html>

@@ -81,11 +81,8 @@
                     <td><%= article.published_date %></td>
                     <td><%= article.housingType %></td>
                     <td><%= article.status %></td>
-                    <td><a href="/attEvent/<%= article.id %>">Article Page</a></td>
+                    <td><a href="/buyRentArticle/<%= article.id %>">Article Page</a></td>
                     <td>
-                        <form action="/viewBooking/<%= article.id %>" method="POST" style="display:inline;">
-                            <button type="submit">View buyers information</button>
-                        </form>
                         <form action="/sellerHome/delete/<%= article.id %>" method="POST" style="display:inline;">
                             <button type="submit">Delete article</button>
                         </form>

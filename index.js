@@ -40,13 +40,6 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-// Middleware to check if the user is logged in for protected routes
-function requireLogin(req, res, next) {
-    if (!req.session.userId) {
-        return res.redirect('/login');
-    }
-    next();
-}
 
 // Middleware to restrict sell tab access to admin, seller, and agent only
 function requireSellerAccess(req, res, next) {
@@ -68,17 +61,6 @@ app.post('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             console.error(err);
-            return res.redirect('/organiserHome');
-        }
-        res.redirect('/login');
-    });
-});
-
-// Handle to logout and destory the seassion
-app.post('/logout', (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error(err);
             return res.redirect('/sellerHome');
         }
         res.redirect('/login');
@@ -93,38 +75,23 @@ app.use('/login', loginRoute);
 const registerRoute = require('./routes/register');
 app.use('/register', registerRoute);
 
-const organiserHomeRoutes = require('./routes/organiserHome');
-app.use('/organiserHome', requireLogin, requireSellerAccess, organiserHomeRoutes);
-
 const sellerHomeRoutes = require('./routes/sellerHome');
-app.use('/sellerHome', requireLogin, requireSellerAccess, sellerHomeRoutes);
-
-const siteSetting = require('./routes/siteSetting');
-app.use('/siteSetting', siteSetting);
-
-const viewBookingRotues = require('./routes/viewBooking');
-app.use('/viewBooking', viewBookingRotues);
-
-const editEvent = require('./routes/editEvent');
-app.use('/editEvent', editEvent);
+app.use('/sellerHome', requireSellerAccess, sellerHomeRoutes);
 
 const editArticle = require('./routes/editArticle');
 app.use('/editArticle', editArticle );
 
-const attendeeHomeRoutes = require('./routes/attendeeHome');
-app.use('/attendeeHome', attendeeHomeRoutes);
-
 const buyRentHomeRoutes = require('./routes/buyRentHome');
 app.use('/buyRentHome', buyRentHomeRoutes);
-
-const attendeeEventRoute = require('./routes/attEvent');
-app.use('/attEvent', attendeeEventRoute);
 
 const buyRentArticleRoute = require('./routes/buyRentArticle');
 app.use('/buyRentArticle', buyRentArticleRoute);
 
 const toolsRoute = require('./routes/tools');
 app.use('/tools', toolsRoute);
+
+const callDisplayRoute = require('./routes/callDisplay');
+app.use('/callDisplay', callDisplayRoute);
 
 // Make the web application listen for HTTP requests
 app.listen(port, () => {

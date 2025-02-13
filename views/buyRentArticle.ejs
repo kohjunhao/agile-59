@@ -44,7 +44,7 @@
           <p><%= article.sellerDetails %></p>
         </div>
 
-        <form action="/" method="GET">
+        <form action="/callDisplay/<%= article.id %>" method="GET">
           <button type="submit">Call</button>
         </form>
 
@@ -66,6 +66,8 @@
         <p><%= article.facilities %></p>
       </div>
     </div>
+
+    <br>
 
     <div class="RecommandationsArticleContainer">
       <div class="recheader">

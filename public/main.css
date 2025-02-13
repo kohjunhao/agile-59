@@ -49,6 +49,50 @@
     background-color: #717171;
 }
 
+/* img links styling */
+
+.imgLinkcontainer{
+    display: flexbox;
+    width: 100%;
+    height: auto;
+}
+
+.topimgscontainer{
+    display: grid;
+    grid: auto/ auto auto;
+    grid-gap: 1.8rem;
+}
+
+.mainimgcontainer img{
+    display: flexbox;
+    width: 100%;
+    height: auto;
+}
+
+.sideimgcontainer{
+    display: grid;
+    grid-template-rows: auto/ auto;
+    grid-gap: 0.8rem;
+}
+
+.side {
+    display: flex; 
+    align-items: center; 
+}
+
+/* Allow the image to grow within the flex container */
+.side-img {
+    display: flex;
+    flex: 3; 
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.side img{
+    width: 100%;
+    height: auto;
+}
+
 
 /* latest projects styling */
 

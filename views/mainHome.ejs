@@ -71,12 +71,30 @@
 
     <br>
 
-    <div>
-        <ul>
-            <li><a href="/organiserHome">Organiser Page</a></li>
-            <li><a href="/attendeeHome">Attendee Page</a></li>
-        </ul>
-    </div>
+    <div class="imgLinkcontainer">
+      <div class="topimgscontainer" id="topimgs-container">
+          <script id="imgsTemplate" type="text/x-handlebars-template">
+              {{#each mainimgs}}
+              <div class="mainimgcontainer">
+                  <div class="main-img">
+                      <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" ></a>
+                  </div>
+              </div>
+              {{/each}}
+              <div class="sideimgcontainer">
+                  {{#each sideimgs}}
+                  <div class="side">
+                      <div class="side-img">
+                          <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" ></a>
+                      </div>
+                  </div>
+                  {{/each}}
+              </div>
+          </script>
+      </div>
+    </div>    
+
+    <br>
 
     <div class="LatestProjectsContainer">
         <div class="latheader">
@@ -129,7 +147,6 @@
         </div>
   
         <div class="RecommandContainer" id="recarticle-container">
-          <!-- recommanded article put here using dummy articles(mustacha)??? -->
           <script id="recommandationsTemplate" type="text/x-handlebars-template">
             {{#each RecommandationArticles}}
               <div class="recarticle">
@@ -234,6 +251,48 @@
      //Mark the corresponding dot as "active"
      dots[pageIndex-1].className += " active";  
      }
+
+
+// handle bar for img links
+document.addEventListener("DOMContentLoaded", function () {
+        var imglist = {
+            mainimgs: [
+            {
+              link: "#",
+              altText: "img 1",
+              img: "./logo.png",
+            }
+          ],
+          sideimgs: [
+            {
+              link: "#",
+              altText: "img 1",
+              img: "./logo.png",
+            },
+            {
+              link: "#",
+              altText: "img 2",
+              img: "./logo.png",
+            }
+          ]
+        };
+
+        // Get the Handlebars template
+        var mainSource = document.getElementById("imgsTemplate").innerHTML;
+        var mainTemplate = Handlebars.compile(mainSource);
+
+        // Get the Handlebars template
+        var sideSource = document.getElementById("imgsTemplate").innerHTML;
+        var sideTemplate = Handlebars.compile(sideSource);
+
+        // Render the template with data
+        var mainImage = mainTemplate(imglist);
+        var sideImage = sideTemplate(imglist);
+
+        // Append the rendered object to container
+        document.querySelector("#topimgs-container").innerHTML = mainImage;
+        document.querySelector("#topimgs-container").innerHTML = sideImage;
+      }); 
 
 
 

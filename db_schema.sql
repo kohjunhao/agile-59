@@ -15,30 +15,6 @@ CREATE TABLE IF NOT EXISTS users (
     account_type TEXT NOT NULL CHECK(account_type IN ('buyer', 'seller', 'agent', 'admin'))
 );
 
--- create table store user site detail for site setting
-CREATE TABLE IF NOT EXISTS site_settings (
-    setting_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    site_name TEXT NOT NULL,
-    site_description TEXT NOT NULL
-);
-
--- create table store detail for events
-CREATE TABLE IF NOT EXISTS events (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    description TEXT NOT NULL,
-    event_date TEXT NOT NULL, 
-    event_time TEXT NOT NULL, 
-    full_price_tickets INTEGER NOT NULL,
-    full_price_ticket_price REAL NOT NULL,
-    concession_tickets INTEGER NOT NULL,
-    concession_ticket_price REAL NOT NULL,
-    state TEXT NOT NULL CHECK(state IN ('draft', 'published')),
-    creation_date TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    last_modified_date TEXT DEFAULT CURRENT_TIMESTAMP,
-    published_date TEXT
-);
-
 CREATE TABLE IF NOT EXISTS articles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
@@ -59,22 +35,7 @@ CREATE TABLE IF NOT EXISTS articles (
     image_path TEXT
 );
 
--- create table store booking info for view booking info
-CREATE TABLE IF NOT EXISTS bookings (
-    booking_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    event_id INTEGER NOT NULL,
-    name TEXT NOT NULL,
-    ticket_type TEXT NOT NULL CHECK(ticket_type IN ('full_price', 'concession')),
-    tickets_bought INTEGER NOT NULL,
-    revenue REAL NOT NULL,
-    FOREIGN KEY(event_id) REFERENCES events(id) ON DELETE CASCADE
-);
-
-
 -- Insert default data (if necessary here)
-
--- Insert a default site setting
-INSERT INTO site_settings (site_name, site_description) VALUES ('Default Site Name', 'Default Description');
 
 -- Insert a default admin account
 INSERT INTO users (user_name, email, password, account_type) VALUES ('admin', 'admin@example.com', 'Admin@123', 'admin');
