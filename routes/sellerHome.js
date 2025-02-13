@@ -30,8 +30,8 @@ router.get("/", (req, res) => {
 router.get("/create", (req, res) => {
   res.render("editArticle.ejs", {
     article: {
-      id: null, // Indicating it's a new event
-      creation_date: new Date().toISOString().split("T")[0], // Current date
+      id: null, 
+      creation_date: new Date().toISOString().split("T")[0], 
       title: "",
       insight: "",
       amenities: "",

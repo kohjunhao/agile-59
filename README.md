@@ -1,6 +1,6 @@
-### CM2040 Database Networks event management app ###
+### House finder website ###
 
-#### useage of prgrogram ####
+#### useage of program ####
 
 Install the node packages
 
@@ -24,7 +24,7 @@ Run web app
 * Run ```npm run start``` to start serving the web app (Access via http://localhost:3000)
 
 
-login detail for the oganiser home page
+login details 
 
 * It can be login in via the user name or the email address
 
@@ -44,4 +44,4 @@ Register a new account
 
 * nodemon
 * express session
-* bootstrap
+* mustache handle bar
