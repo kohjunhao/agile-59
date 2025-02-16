@@ -8,6 +8,7 @@
 </head>
 <body>
     <div>
+        <a href="/userProfile">welcome <%= user.user_name %></a>
         <form action="/logout" method="POST">
             <button type="submit">Log Out</button>
         </form>
@@ -18,7 +19,6 @@
         <a href="/sellerHome/create">Create a new property listing</a>
     </div>
     
-     <!-- add housing type/ price of property / housing location in the header -->
     <div>
         <h2>Draft property article</h2>
         <table border="1">

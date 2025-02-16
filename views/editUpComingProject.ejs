@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>Upcoming project edit Page</title>
+</head>
+<body>
+    <div>
+        <h1> Upcoming project creation/edit Page</h1>
+        <p>Article Creation Date: <%= article.creation_date %></p>
+        <form action="/editUpComingProject/<%= article.id %>" method="POST" enctype="multipart/form-data">
+            
+            <label for="img">Project Image:</label>
+            <input type="file" id="image" name="image" accept="image/*"><br>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="<%= article.location%>" required><br>
+    
+            
+             <!-- able to manually add the flat type -->
+            <label for="housingType">Housing Type:</label>
+            <select id="housingType" name="housingType" required>
+              <option value="HDB" <%= article.housingType === "HDB" ? "selected" : "" %>>HDB</option>
+              <option value="Condo" <%= article.housingType === "Condo" ? "selected" : "" %>>Condo</option>
+              <option value="Private Property" <%= article.housingType === "Private Property" ? "selected" : "" %>>Private Property</option>
+              <option value="Others" <%= article.housingType === "Others" ? "selected" : "" %>>Others</option>
+            </select><br>
+
+            <label for="sellerName">Number of units:</label>
+            <input type="number" id="numUnit" name="numUnit" value="<%= article.numUnit %>" required><br>
+
+            <button type="submit">Submit Changes</button>
+        </form>
+
+        <form action="/projectHome" method="GET">
+            <button type="submit">Back to project home</button>
+        </form>
+    </div>
+    
+</body>
+</html>

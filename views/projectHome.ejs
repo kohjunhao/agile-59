@@ -1,0 +1,185 @@
+<!-- latest prject contents: -->
+ <!--  hse img, location a tiltle/ availibity flat type as content/ type : BTO/SBF-->
+
+ <!-- upcoming project contents: -->
+ <!-- dummy img, location a tiltle/ availibity flat type as content/ type : upcoming BTO -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>Project home page</title>
+</head>
+<body>
+    <header>
+        <div>
+            <!-- logo -->
+            <div>
+                <a href="/"><img src="" alt="logo" ></a>
+            </div>
+
+            <div>
+                <a href="/">Home</a>
+                <a href="/buyRentHome">Buy/rent</a>
+                <a href="/sellerHome">Sell</a>
+                <a href="/">New projects</a>
+                <a href="/tools">Tools</a>
+                <a href="/">Find agent</a>
+            </div>
+            
+            <!-- login -->
+            <div>
+                <a href="/login">Login</a>
+            </div>
+
+        </div>
+    </header>
+    
+    <!-- filter put here -->
+
+    <div>
+
+      <div>
+        <h2>Housing projects</h2>
+      </div>
+      
+      <% if (articles.length > 0) { %>
+
+          <div>
+              <% articles.forEach(article => { %>
+                  <!-- <img src="<%= article.image_path %>" alt="Property Image" style="max-width: 200px;" >
+                  <a href="/buyRentArticle/<%= article.id %>"><%= article.title %></a>
+                  <p><%= article.description %></p>
+                  <p><%= article.published_date %></p> -->
+              <% }); %>
+          </div>
+
+      <% } else { %>
+          <p>No projects available at the moment.</p>
+      <% } %>
+    </div>
+
+    <div>
+
+      <div>
+        <h2>Upcoming projects</h2>
+      </div>
+      
+      <% if (articles.length > 0) { %>
+
+          <div>
+              <% articles.forEach(article => { %>
+                  <!-- <img src="<%= article.image_path %>" alt="Property Image" style="max-width: 200px;" >
+                  <a href="/buyRentArticle/<%= article.id %>"><%= article.title %></a>
+                  <p><%= article.description %></p>
+                  <p><%= article.published_date %></p> -->
+              <% }); %>
+          </div>
+
+      <% } else { %>
+          <p>No upcoming project available at the moment.</p>
+      <% } %>
+    </div>
+
+    <br>
+
+    <!-- Q&A section -->
+    <div class="QAsectioncontainer">
+        <div class="QAheader">
+          <h3>FAQ</h3>
+        </div>
+  
+        <div class="QA">
+          <div class="QA-item">
+            <div class="QA-item-header">qns 1 put here</div>
+            <div class="QA-item-body">
+              <div class="QA-item-body-content">ans 1 put here</div>
+            </div>
+          </div>
+  
+          <div class="QA-item">
+            <div class="QA-item-header">qns 2 put here</div>
+            <div class="QA-item-body">
+              <div class="QA-item-body-content">ans 2 put here</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- footer -->
+    <footer>
+        <div class=>
+          <div>
+            <P>Follow our offical social media accounts:</P>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+           </div>
+         
+           <div class="footer-col">
+            <ul>
+                <li><a href="#">New Projects</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="#">Find Agents</a></li>
+            </ul>
+           </div>
+
+           <div class="footer-col">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">privacy Policy</a></li>
+                <li><a href="#">Term of Service</a></li>
+            </ul>
+           </div>
+
+           <div class="footer-col">
+            <ul>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Linceses</a></li>
+                <li><a href="#">Mobile App</a></li>
+                <li><a href="#">Term of Service</a></li>
+            </ul>
+           </div>
+   
+           <div class="footer-bottom">
+            <p><small>&copy;xxxx. All right reserve. Images are for illustrative purposes.Terms and conditions apply</small></p>
+           </div>
+   
+        </div>
+    </footer>
+
+    <script>
+      // Q&A js script //
+      const QAItemHeaders = document.querySelectorAll(".QA-item-header");
+      QAItemHeaders.forEach((QAItemHeader) => {
+        QAItemHeader.addEventListener("click", (event) => {
+          const currentActiveQAItemHeader = document.querySelector(
+            ".QA-item-header.active"
+          );
+          if (
+            currentActiveQAItemHeader &&
+            currentActiveQAItemHeader !== QAItemHeader
+          ) {
+            currentActiveQAItemHeader.classList.toggle("active");
+            currentActiveQAItemHeader.nextElementSibling.style.maxHeight = 0;
+          }
+
+          QAItemHeader.classList.toggle("active");
+          const QAItemBody = QAItemHeader.nextElementSibling;
+          if (QAItemHeader.classList.contains("active")) {
+            QAItemBody.style.maxHeight = QAItemBody.scrollHeight + "px";
+          } else {
+            QAItemBody.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+
+</body>
+</html>

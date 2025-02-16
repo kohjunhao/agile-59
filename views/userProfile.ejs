@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <title>user profile Page</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <!-- logo -->
+            <div>
+                <a href="/"><img src="" alt="logo" ></a>
+            </div>
+
+            <div>
+                <a href="/">Home</a>
+                <a href="/buyRentHome">Buy/rent</a>
+                <a href="/sellerHome">Sell</a>
+                <a href="/">New projects</a>
+                <a href="/tools">Tools</a>
+                <a href="/">Find agent</a>
+            </div>
+            
+            <!-- logout -->
+            <div>
+                <a href="/userProfile">welcome <%= user.user_name %></a>
+                <form action="/logout" method="POST">
+                    <button type="submit">Log Out</button>
+                </form>
+            </div>
+
+        </div>
+    </header>
+
+    <div>
+        
+        <div>
+            <h1>Edit profile</h1>
+        </div>
+
+        <div>
+            <form action="/userProfile" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<%= user.user_name %>" pattern="[A-Za-z]+"  required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"  pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+                <br>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
