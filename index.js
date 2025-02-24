@@ -93,6 +93,9 @@ app.use('/tools', toolsRoute);
 const callDisplayRoute = require('./routes/callDisplay');
 app.use('/callDisplay', callDisplayRoute);
 
+const projectHomeRoute = require('./routes/projectHome');
+app.use('/projectHome', projectHomeRoute);
+
 // Make the web application listen for HTTP requests
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

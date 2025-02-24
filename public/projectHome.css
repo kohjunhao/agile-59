@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header styling */
+
+
+/* footer styling */
+
+
+/* upcming project styling */
+
+.upprobox{
+    display: flexbox;
+    width: 100%;
+    height: auto;
+}
+
+.upcomingwrapper{
+    display: grid;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em 0;
+}
+
+.projbox{
+    flex-wrap: wrap;
+    width: 88%;
+    height: auto;
+    margin: 1em auto;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    display: none;
+}
+
+.upprobox .upcomingwrapper .projbox:nth-child(1),
+.upprobox .upcomingwrapper .projbox:nth-child(2),
+.upprobox .upcomingwrapper .projbox:nth-child(3){
+    display: flex;
+}
+
+.projbox .buildingimg{
+    flex: 1 1 200px;
+    width: 100%;
+    height: auto;
+}
+
+.buildingimg img{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.upprocontent{
+    flex: 2 1 300px;
+    padding: 1em 2em;
+}
+
+.upprocontent a{
+    text-decoration: none;
+    color: #334;
+}
+
+.upprocontent h3{
+    font-size: 1.3em;
+   margin-top: 0.6em;
+   margin-bottom: 0.6em;
+}
+
+.upprocontent p{
+   font-size: 16px;
+   margin-top: 0.6em;
+   margin-bottom: 0.6em;
+}
