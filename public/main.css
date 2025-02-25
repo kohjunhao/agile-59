@@ -6,8 +6,108 @@
 
 /* header styling */
 
+header{
+    width: 100%;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 99999px;
+    margin: 0 auto;
+    
+}
+
+.finder-logo img{
+    width: 30%;
+    height: 90%;
+}
+
+.nav-link{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link a {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+}
+
+.login{
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px;
+}
+
 
 /* footer styling */
+
+footer {
+    background-color: #d3d3d3; 
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-container h3 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    /* font type put here */
+    margin-bottom: 0.5rem;
+}
+
+.footer-row {
+    width: 25%;
+}
+
+.footer-row p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ssicon {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #000;
+}
+
+.footer-col {
+    width: 20%;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
 
 
 /* Image slider styling */
