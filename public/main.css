@@ -194,6 +194,74 @@ img {
     color: #0056b3;
 }
 
+/* feature property styling */
+
+.featheader{
+    font-size: 150%;
+    text-align: center;
+}
+
+.FeaturePropertyContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.FeatureContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.featproperty {
+    margin: 10px;
+    background-color: #d2b48c;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.featproperty a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.featproperty a:hover{
+    color: #0056b3;
+}
+
+/* recommand styling */
+
+.recheader{
+    font-size: 150%;
+    text-align: center;
+}
+
+.RecommandationsArticleContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.RecommandContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.recarticle {
+    margin: 10px;
+    background-color: #d2b48c;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.recarticle a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.recarticle a:hover{
+    color: #0056b3;
+}
+
 /* footer styling */
 
 .footer-container {
@@ -243,6 +311,7 @@ img {
 }
 
 /* Responsive styles */
+
 @media (min-width: 1000px) {
     .dropdown-content {
         display: block; 
@@ -292,6 +361,14 @@ img {
     }
 
     .LastestContainer {
+        display: block;
+    }
+
+    .FeatureContainer{
+        display: block;
+    }
+
+    .RecommandContainer{
         display: block;
     }
 
