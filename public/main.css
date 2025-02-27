@@ -4,22 +4,17 @@
     align-items: center;
     padding: 10px 20px;
     background-color: #d2b48c;
+    border-radius: 10px;
 }
 
 .finder-logo {
     margin-right: auto;
 }
 
-.nav-link-container {
-    display: flex;
-    justify-content: flex-start;
-    cursor: default;
-
-}
-
 /* Logo styles */
 .finder-logo img {
     max-width: 30%;
+    border-radius: 10px;
 }
 
 /* Navigation styles */
@@ -46,7 +41,7 @@
 }
 
 .login {
-    margin-left: 15px; /* Add margin to login for consistent spacing */
+    margin-left: 15px;
 }
 
 /* Login styles */
@@ -133,4 +128,24 @@ img {
         line-height: 1.6;
         margin: 0 10px;
     }
+
+    .header-container {
+        align-items: center;
+        background-color: #d2b48c;
+        padding: 20px;
+    }
+    
+    .finder-logo {
+        margin: 0;
+    }
+
+    .finder-logo img{
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .nav-link-container, .login {
+        margin: 20px;
+    }
+
 }
