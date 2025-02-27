@@ -1,369 +1,114 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Main container for images */
+.imgLinkcontainer {
+    display: flex;
 }
 
-/* header styling */
-
-header{
-    width: 100%;
-    padding: 2rem 1rem;
-    border-bottom: 1px solid #ddd;
+/* Main image styles */
+.main-img {
+    flex: 1; /* Takes up half of the container */
+    max-width: 50%; /* Ensures it doesn't exceed half */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-.header-container{
+/* Header styles */
+.header-container {
     display: flex;
     justify-content: space-between;
-    max-width: 99999px;
-    margin: 0 auto;
-    
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #d2b48c;
 }
 
-.finder-logo img{
-    width: 30%;
-    height: 90%;
+.finder-logo {
+    margin-right: auto; /* Align logo to the left */
 }
 
-.nav-link{
+.nav-link-container {
     display: flex;
-    gap: 1.5rem;
+    justify-content: flex-end; /* Align nav links and login to the right */
 }
 
+/* Logo styles */
+.finder-logo img {
+    max-width: 20%;
+}
+
+/* Navigation styles */
+.nav-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    gap: 15px; /* Ensure consistent spacing */
+}
+
+.login {
+    margin-left: 15px; /* Add margin to login for consistent spacing */
+}
+
+/* Navigation link styles */
 .nav-link a {
     text-decoration: none;
-    font-size: 1rem;
-    padding: 8px 12px;
+    color: #333;
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make font bold */
 }
 
-.login{
+/* Login styles */
+.login a {
     text-decoration: none;
-    font-size: 1rem;
-    padding: 8px;
+    color: white; /* Text color for button */
+    padding: 10px 15px; /* Add padding to resemble a button */
+    background-color: #007bff; /* Button background color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make font bold */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-
-/* footer styling */
-
-footer {
-    background-color: #d3d3d3; 
-    padding: 2rem 0;
-    width: 100%;
+.login a:hover {
+    background-color: #0056b3; /* Darker background on hover */
 }
 
-.footer-container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.footer-container h3 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    /* font type put here */
-    margin-bottom: 0.5rem;
-}
-
-.footer-row {
-    width: 25%;
-}
-
-.footer-row p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.ssicon {
-    display: inline-block;
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-    color: #000;
-}
-
-.footer-col {
-    width: 20%;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-col ul li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1rem;
-}
-
-.footer-bottom {
-    width: 100%;
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-}
-
-
-/* Image slider styling */
-
-.imgslider-container{
+/* Image slider styles */
+.imgslider-container {
     position: relative;
-    max-width: 90%;
-    margin: auto;
+    max-width: 100%;
     overflow: hidden;
 }
 
-.slide{
-    display: none;
+img{
+    max-width: 33%;
 }
 
-.imgslider-container .slide img{
-    display: flexbox;
-    width: 100%;
-    height: auto;
+/* Dot container styles */
+.dotcontainer {
+    text-align: center;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-.dotcontainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .nav-link {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
-.dotcontainer .dot{
-    display: inline-block;
-    border: solid;
-    width: 1rem;
-    height: 1rem;
-    margin: 0 2px;
-    border-radius: 50%;
+@media (max-width: 480px) {
+    .nav-link a {
+        font-size: 14px;
+    }
+
+    .header-container {
+        padding: 5px 10px;
+    }
 }
-
-.active, .dot:hover {
-    background-color: #717171;
-}
-
-/* img links styling */
-
-.imgLinkcontainer{
-    display: flexbox;
-    width: 100%;
-    height: auto;
-}
-
-.topimgscontainer{
-    display: grid;
-    grid: auto/ auto auto;
-    grid-gap: 1.8rem;
-}
-
-.mainimgcontainer img{
-    display: flexbox;
-    width: 100%;
-    height: auto;
-}
-
-.sideimgcontainer{
-    display: grid;
-    grid-template-rows: auto/ auto;
-    grid-gap: 0.8rem;
-}
-
-.side {
-    display: flex; 
-    align-items: center; 
-}
-
-/* Allow the image to grow within the flex container */
-.side-img {
-    display: flex;
-    flex: 3; 
-    overflow: hidden;
-    border-radius: 4px;
-}
-
-.side img{
-    width: 100%;
-    height: auto;
-}
-
-
-/* latest projects styling */
-
-.LatestProjectsContainer{
-    display: flexbox;
-    width: 100%;
-    height: auto;
-}
-
-.LatestProjectsContainer .latheader h2{
-    padding-left: 0.5rem;
-}
-
-.LatestProjectsContainer .LastestContainer{
-    display: grid;
-    grid:auto/auto auto auto;
-    grid-gap: 1.5rem;
-    padding: 0.5rem;
-    text-align: left;
-}
-
-.latproject a{
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    color: black;
-}
-
-.latproject .imgcontainer{
-    margin-bottom: 0.5rem;
-    height: auto;
-    overflow: hidden;
-    border-radius: 3px;
-}
-
-.latproject:hover .imgcontainer{
-    transform: scale(1.1);
-}
-
-.latproject img{
-    display: flexbox;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.latproject h3{
-    display: flexbox;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.latproject p{
-    display: flexbox;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-
-/* feature styling */
-
-.FeaturePropertyContainer{
-    display: flexbox;
-    width: 100%;
-    height: auto;
-}
-
-.FeaturePropertyContainer .featheader h2{
-    padding-left: 0.5rem;
-}
-
-.FeaturePropertyContainer .FeatureContainer{
-    display: grid;
-    grid:auto/auto auto auto;
-    grid-gap: 1.5rem;
-    padding: 0.5rem;
-    text-align: left;
-}
-
-.featproperty a{
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    color: black;
-}
-
-.featproperty .imgcontainer{
-    margin-bottom: 0.5rem;
-    height: auto;
-    overflow: hidden;
-    border-radius: 3px;
-}
-
-.featproperty:hover .imgcontainer{
-    transform: scale(1.1);
-}
-
-.featproperty img{
-    display: flexbox;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.featproperty h3{
-    display: flexbox;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.featproperty p{
-    display: flexbox;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-
-/* recommand styling */
-
-.RecommandationsArticleContainer{
-    display: flexbox;
-    width: 100%;
-    height: auto;
-}
-
-.RecommandationsArticleContainer .recheader h2{
-    padding-left: 0.5rem;
-}
-
-.RecommandationsArticleContainer .RecommandContainer{
-    display: grid;
-    grid:auto/auto auto auto;
-    grid-gap: 1.5rem;
-    padding: 0.5rem;
-    text-align: left;
-}
-
-.recarticle a{
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    color: black;
-}
-
-.recarticle .imgcontainer{
-    margin-bottom: 0.5rem;
-    height: auto;
-    overflow: hidden;
-    border-radius: 3px;
-}
-
-.recarticle:hover .imgcontainer{
-    transform: scale(1.1);
-}
-
-.recarticle img{
-    display: flexbox;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.recarticle h3{
-    display: flexbox;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.recarticle p{
-    display: flexbox;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-
-
-

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
     <!--  icon font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>Main page</title>
@@ -11,30 +11,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" 
     integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
 </head>
 <body>
     <header>
         <div class="header-container">
             <!-- logo -->
-            <div class="finder-logo" >
-                <a href="/"><img src="../logo3.jpg" alt="NextDoorSG logo" ></a>
+            <div class="finder-logo">
+                <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
             </div>
 
-            <div class="nav-link">
-                <a href="/">Home</a>
-                <a href="/buyRentHome">Buy/rent</a>
-                <a href="/sellerHome">Sell</a>
-                <a href="#">New projects</a>
-                <a href="/tools">Tools</a>
-                <a href="#">Find agent</a>
+            <div class="nav-link-container">
+                <div class="nav-link">
+                    <a href="/">Home</a>
+                    <a href="/buyRentHome">Buy/rent</a>
+                    <a href="/sellerHome">Sell</a>
+                    <a href="#">New projects</a>
+                    <a href="/tools">Tools</a>
+                    <a href="#">Find agent</a>
+                </div>
+                
+                <!-- login -->
+                <div class="login">
+                    <a href="/login">Login</a>
+                </div>
             </div>
-            
-            <!-- login -->
-            <div class="login">
-                <a href="/login">Login</a>
-            </div>
-
         </div>
     </header>
 
@@ -45,97 +45,96 @@
     <br>
     <!--Image slider-->
     <div class="imgslider-container">
-         <div class="slide fade">
-          <img src="" alt="house1">
-         </div>
+        <div class="slide fade">
+            <img src="/image/house1.jpg" alt="house1">
+        </div>
 
-         <div class="slide fade">
-          <img src="" alt="house2" >
-         </div>
+        <div class="slide fade">
+            <img src="/image/house2.jpg" alt="house2">
+        </div>
 
-         <div class="slide fade">
-          <img src="" alt="house3">
-         </div>
+        <div class="slide fade">
+            <img src="/image/house3.jpg" alt="house3">
+        </div>
 
-         <a class="prev" onclick="changeImg(-1)">&#10094;</a>
-         <a class="next" onclick="changeImg(1)">&#10095;</a>
+        <a class="prev" onclick="changeImg(-1)">&#10094;</a>
+        <a class="next" onclick="changeImg(1)">&#10095;</a>
     </div>
     
     <br>
-     <!--image sider button-->
+    <!--image slider button-->
     <div class="dotcontainer">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
     <br>
 
     <div class="imgLinkcontainer">
-      <div class="topimgscontainer" id="topimgs-container">
-          <script id="imgsTemplate" type="text/x-handlebars-template">
-              {{#each mainimgs}}
-              <div class="mainimgcontainer">
-                  <div class="main-img">
-                      <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" ></a>
-                  </div>
-              </div>
-              {{/each}}
-              <div class="sideimgcontainer">
-                  {{#each sideimgs}}
-                  <div class="side">
-                      <div class="side-img">
-                          <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" ></a>
-                      </div>
-                  </div>
-                  {{/each}}
-              </div>
-          </script>
-      </div>
+        <div class="topimgscontainer" id="topimgs-container">
+            <script id="imgsTemplate" type="text/x-handlebars-template">
+                {{#each mainimgs}}
+                <div class="mainimgcontainer">
+                    <div class="main-img">
+                        <a href=""><img src="/uploads/1738553555496.jpg" alt="img1"></a>
+                    </div>
+                </div>
+                {{/each}}
+                <div class="sideimgcontainer">
+                    {{#each sideimgs}}
+                    <div class="side">
+                        <div class="side-img">
+                            <a href=""><img src="/uploads/1738553555496.jpg" alt="imgside"></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </script>
+        </div>
     </div>    
 
     <br>
 
     <div class="LatestProjectsContainer">
         <div class="latheader">
-          <h2>Latest projects</h2>
+            <h2>Latest projects</h2>
         </div>
   
         <div class="LastestContainer" id="latproj-container">
-          <script id="LastestsTemplate" type="text/x-handlebars-template">
-            {{#each LatestProjects}}
-              <div class="latproject">
-                <div class="imgcontainer">
-                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+            <script id="LastestsTemplate" type="text/x-handlebars-template">
+                {{#each LatestProjects}}
+                <div class="latproject">
+                    <div class="imgcontainer">
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
+                    </div>
+                    <a href="{{link}}"><h3>{{title}}</h3></a>
+                    <a href="{{link}}"><p>{{context}}</p></a>
+                    <a href="{{link}}"><p>{{title}}</p></a>
                 </div>
-                <a href="{{link}}"><h3>{{title}}</h3></a>
-                <a href="{{link}}"><p>{{context}}</p></a>
-                <a href="{{link}}"><p>{{title}}</p></a>
-              </div>
-            {{/each}}
-          </script>
+                {{/each}}
+            </script>
         </div>
     </div>
 
-
     <div class="FeaturePropertyContainer">
         <div class="featheader">
-          <h2>Feature property</h2>
+            <h2>Feature property</h2>
         </div>
   
         <div class="FeatureContainer" id="featprop-container">
-          <script id="featuresTemplate" type="text/x-handlebars-template">
-            {{#each FeatureProperties}}
-              <div class="featproperty">
-                <div class="imgcontainer">
-                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+            <script id="featuresTemplate" type="text/x-handlebars-template">
+                {{#each FeatureProperties}}
+                <div class="featproperty">
+                    <div class="imgcontainer">
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
+                    </div>
+                    <a href="{{link}}"><h3>{{title}}</h3></a>
+                    <a href="{{link}}"><p>{{context}}</p></a>
+                    <a href="{{link}}"><p>{{title}}</p></a>
                 </div>
-                <a href="{{link}}"><h3>{{title}}</h3></a>
-                <a href="{{link}}"><p>{{context}}</p></a>
-                <a href="{{link}}"><p>{{title}}</p></a>
-              </div>
-            {{/each}}
-          </script>
+                {{/each}}
+            </script>
         </div>
     </div>
 
@@ -143,22 +142,22 @@
 
     <div class="RecommandationsArticleContainer">
         <div class="recheader">
-          <h2>Recommandations</h2>
+            <h2>Recommandations</h2>
         </div>
   
         <div class="RecommandContainer" id="recarticle-container">
-          <script id="recommandationsTemplate" type="text/x-handlebars-template">
-            {{#each RecommandationArticles}}
-              <div class="recarticle">
-                <div class="imgcontainer">
-                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+            <script id="recommandationsTemplate" type="text/x-handlebars-template">
+                {{#each RecommandationArticles}}
+                <div class="recarticle">
+                    <div class="imgcontainer">
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
+                    </div>
+                    <a href="{{link}}"><h3>{{title}}</h3></a>
+                    <a href="{{link}}"><p>{{context}}</p></a>
+                    <a href="{{link}}"><p>{{title}}</p></a>
                 </div>
-                <a href="{{link}}"><h3>{{title}}</h3></a>
-                <a href="{{link}}"><p>{{context}}</p></a>
-                <a href="{{link}}"><p>{{title}}</p></a>
-              </div>
-            {{/each}}
-          </script>
+                {{/each}}
+            </script>
         </div>
     </div>
 
@@ -167,291 +166,265 @@
     <!-- footer -->
     <footer>
         <div class="footer-container">
-          <div class="footer-row">
-            <h3>nextdoorsg</h3>
-            <P>Follow our offical social media accounts:</P>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-           </div>
+            <div class="footer-row">
+                <h3>nextdoorsg</h3>
+                <p>Follow our official social media accounts:</p>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
          
-           <div class="footer-col">
-            <ul>
-                <li><a href="#">New Projects</a></li>
-                <li><a href="/tools">Tools</a></li>
-                <li><a href="#">Find Agents</a></li>
-            </ul>
-           </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">New Projects</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="#">Find Agents</a></li>
+                </ul>
+            </div>
 
-           <div class="footer-col">
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">privacy Policy</a></li>
-                <li><a href="#">Term of Service</a></li>
-            </ul>
-           </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
 
-           <div class="footer-col">
-            <ul>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Linceses</a></li>
-                <li><a href="#">Mobile App</a></li>
-                <li><a href="#">Term of Service</a></li>
-            </ul>
-           </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
    
-           <div class="footer-bottom">
-            <p><small>&copy;xxxx. All right reserve. Images are for illustrative purposes.Terms and conditions apply</small></p>
-           </div>
-   
+            <div class="footer-bottom">
+                <p><small>&copy;xxxx. All rights reserved. Images are for illustrative purposes. Terms and conditions apply</small></p>
+            </div>
         </div>
     </footer>
 
-
     <script>
-     ///JS for slider///
-     // Initialize the page index to 1 and display the first slide
-     let pageIndex = 1;
-     displaySlides(pageIndex);
+        ///JS for slider///
+        // Initialize the page index to 1 and display the first slide
+        let pageIndex = 1;
+        displaySlides(pageIndex);
   
-     // Function to change the image slide 
-     function changeImg(n) {
-         displaySlides(pageIndex += n);
-        }
-  
-     // Function to show a specific slide when a dot is clicked
-     function currentSlide(n) {
-         displaySlides(pageIndex = n);
+        // Function to change the image slide 
+        function changeImg(n) {
+            displaySlides(pageIndex += n);
         }
   
-     // Function to display the slides
-     function displaySlides(n) {
-     let i;
-     let slides = document.getElementsByClassName("slide");
-     let dots = document.getElementsByClassName("dot");
+        // Function to show a specific slide when a dot is clicked
+        function currentSlide(n) {
+            displaySlides(pageIndex = n);
+        }
+  
+        // Function to display the slides
+        function displaySlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
 
-     // Check if n is out of bounds and adjust pageIndex accordingly
-     if (n > slides.length) {pageIndex = 1}    
-     if (n < 1) {pageIndex = slides.length}
+            // Check if n is out of bounds and adjust pageIndex accordingly
+            if (n > slides.length) {pageIndex = 1}    
+            if (n < 1) {pageIndex = slides.length}
 
-     // Hide the slides
-     for (i = 0; i < slides.length; i++) {
-         slides[i].style.display = "none";  
+            // Hide the slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+
+            // Remove the "active" class from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            // Display the current slide and 
+            slides[pageIndex-1].style.display = "block";
+
+            //Mark the corresponding dot as "active"
+            dots[pageIndex-1].className += " active";  
         }
 
-     // Remove the "active" class from all dots
-     for (i = 0; i < dots.length; i++) {
-         dots[i].className = dots[i].className.replace(" active", "");
-        }
+        // handle bar for img links
+        document.addEventListener("DOMContentLoaded", function () {
+            var imglist = {
+                mainimgs: [
+                    {
+                        link: "#",
+                        altText: "img 1",
+                        img: "/uploads/1739304987448.jpg",
+                    }
+                ],
+                sideimgs: [
+                    {
+                        link: "#",
+                        altText: "img 1",
+                        img: "/uploads/1739304987448.jpg",
+                    },
+                    {
+                        link: "#",
+                        altText: "img 2",
+                        img: "/uploads/1739304987448.jpg",
+                    }
+                ]
+            };
 
-     // Display the current slide and 
-     slides[pageIndex-1].style.display = "block";
+            // Get the Handlebars template
+            var mainSource = document.getElementById("imgsTemplate").innerHTML;
+            var mainTemplate = Handlebars.compile(mainSource);
 
-     //Mark the corresponding dot as "active"
-     dots[pageIndex-1].className += " active";  
-     }
+            // Get the Handlebars template
+            var sideSource = document.getElementById("imgsTemplate").innerHTML;
+            var sideTemplate = Handlebars.compile(sideSource);
 
+            // Render the template with data
+            var mainImage = mainTemplate(imglist);
+            var sideImage = sideTemplate(imglist);
 
-// handle bar for img links
-document.addEventListener("DOMContentLoaded", function () {
-        var imglist = {
-            mainimgs: [
-            {
-              link: "#",
-              altText: "img 1",
-              img: "./logo.png",
-            }
-          ],
-          sideimgs: [
-            {
-              link: "#",
-              altText: "img 1",
-              img: "./logo.png",
-            },
-            {
-              link: "#",
-              altText: "img 2",
-              img: "./logo.png",
-            }
-          ]
-        };
+            // Append the rendered object to container
+            document.querySelector("#topimgs-container").innerHTML = mainImage;
+            document.querySelector("#topimgs-container").innerHTML = sideImage;
+        }); 
 
-        // Get the Handlebars template
-        var mainSource = document.getElementById("imgsTemplate").innerHTML;
-        var mainTemplate = Handlebars.compile(mainSource);
+        // handle bar for Latest project
+        document.addEventListener("DOMContentLoaded", function () {
+            var latArr = {
+                LatestProjects: [
+                    {
+                        link: "#",
+                        altText: "latest project 1",
+                        img: "./image/venus-flytrap.jpg",
+                        title: "Venus Flytrap: Natures Carnivorous Marvel",
+                        context: "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+                        name: "Admin",
+                        date: "14/Sep/2025",
+                    },
+                    {
+                        link: "#",
+                        altText: "latest project 2",
+                        img: "./image/polar-bear.jpg",
+                        title: "The Enigmatic World of Polar Bears",
+                        context: "Explore the resilient life of polar bears in the Arctic wilderness.",
+                        name: "Admin",
+                        date: "09/Nov/2025",
+                    },
+                    {
+                        link: "#",
+                        altText: "latest project 3",
+                        img: "./image/pelican.jpg",
+                        title: "Majestic Pelicans: Masters of Aerial Grace",
+                        context: "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+                        name: "Admin",
+                        date: "14/Jun/2025",
+                    }
+                ],
+            };
 
-        // Get the Handlebars template
-        var sideSource = document.getElementById("imgsTemplate").innerHTML;
-        var sideTemplate = Handlebars.compile(sideSource);
+            // Get the Handlebars template
+            var latestSource = document.getElementById("LastestsTemplate").innerHTML;
+            var latestTemplate = Handlebars.compile(latestSource);
 
-        // Render the template with data
-        var mainImage = mainTemplate(imglist);
-        var sideImage = sideTemplate(imglist);
+            // Render the template with data
+            var latestProjects = latestTemplate(latArr);
 
-        // Append the rendered object to container
-        document.querySelector("#topimgs-container").innerHTML = mainImage;
-        document.querySelector("#topimgs-container").innerHTML = sideImage;
-      }); 
+            // Append the rendered object to container
+            document.querySelector("#latproj-container").innerHTML = latestProjects;
+        });
 
+        // handle bar for feature property
+        document.addEventListener("DOMContentLoaded", function () {
+            var featArr = {
+                FeatureProperties: [
+                    {
+                        link: "#",
+                        altText: "feature property 1",
+                        img: "./image/venus-flytrap.jpg",
+                        title: "Venus Flytrap: Natures Carnivorous Marvel",
+                        context: "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+                        name: "Admin",
+                        date: "14/Sep/2025",
+                    },
+                    {
+                        link: "#",
+                        altText: "feature property 2",
+                        img: "./image/polar-bear.jpg",
+                        title: "The Enigmatic World of Polar Bears",
+                        context: "Explore the resilient life of polar bears in the Arctic wilderness.",
+                        name: "Admin",
+                        date: "09/Nov/2025",
+                    },
+                    {
+                        link: "#",
+                        altText: "feature property 3",
+                        img: "./image/pelican.jpg",
+                        title: "Majestic Pelicans: Masters of Aerial Grace",
+                        context: "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+                        name: "Admin",
+                        date: "14/Jun/2025",
+                    }
+                ],
+            };
 
+            // Get the Handlebars template
+            var featureSource = document.getElementById("featuresTemplate").innerHTML;
+            var featureTemplate = Handlebars.compile(featureSource);
 
-      // handle bar for Latest project
-      document.addEventListener("DOMContentLoaded", function () {
-        var latArr = {
-            LatestProjects: [
-            {
-              link: "#",
-              altText: "latest project 1",
-              img: "./image/venus-flytrap.jpg",
-              title: "Venus Flytrap: Natures Carnivorous Marvel",
-              context:
-                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
-              name: "Admin",
-              date: "14/Sep/2025",
-            },
-            {
-              link: "#",
-              altText: "latest project 2",
-              img: "./image/polar-bear.jpg",
-              title: "The Enigmatic World of Polar Bears",
-              context:
-                "Explore the resilient life of polar bears in the Arctic wilderness.",
-              name: "Admin",
-              date: "09/Nov/2025",
-            },
-            {
-              link: "#",
-              altText: "latest project 3",
-              img: "./image/pelican.jpg",
-              title: "Majestic Pelicans: Masters of Aerial Grace",
-              context:
-                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
-              name: "Admin",
-              date: "14/Jun/2025",
-            }
+            // Render the template with data
+            var featureProperties = featureTemplate(featArr);
 
-          ],
-        };
+            // Append the rendered object to container
+            document.querySelector("#featprop-container").innerHTML = featureProperties;
+        });
 
-        // Get the Handlebars template
-        var latestSource = document.getElementById("LastestsTemplate").innerHTML;
-        var latestTemplate = Handlebars.compile(latestSource);
+        // handle bar for Recommandations
+        document.addEventListener("DOMContentLoaded", function () {
+            var recArr = {
+                RecommandationArticles: [
+                    {
+                        link: "#",
+                        altText: "property recommandation 1",
+                        img: "./image/venus-flytrap.jpg",
+                        title: "Venus Flytrap: Natures Carnivorous Marvel",
+                        context: "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+                        name: "Admin",
+                        date: "14/Sep/2025",
+                    },
+                    {
+                        link: "#",
+                        altText: "property recommandation 2",
+                        img: "./image/polar-bear.jpg",
+                        title: "The Enigmatic World of Polar Bears",
+                        context: "Explore the resilient life of polar bears in the Arctic wilderness.",
+                        name: "Admin",
+                        date: "09/Nov/2025",
+                    },
+                    {
+                        link: "#",
+                        altText: "property recommandation 3",
+                        img: "./image/pelican.jpg",
+                        title: "Majestic Pelicans: Masters of Aerial Grace",
+                        context: "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+                        name: "Admin",
+                        date: "14/Jun/2025",
+                    }
+                ],
+            };
 
-        // Render the template with data
-        var latestProjects = latestTemplate(latArr);
+            // Get the Handlebars template
+            var recommandSource = document.getElementById("recommandationsTemplate").innerHTML;
+            var recommandTemplate = Handlebars.compile(recommandSource);
 
-        // Append the rendered object to container
-        document.querySelector("#latproj-container").innerHTML =
-        latestProjects;
-      });
+            // Render the template with data
+            var recommandArticles = recommandTemplate(recArr);
 
-
-
-      // handle bar for feature property
-      document.addEventListener("DOMContentLoaded", function () {
-        var featArr = {
-            FeatureProperties: [
-            {
-              link: "#",
-              altText: "feature property 1",
-              img: "./image/venus-flytrap.jpg",
-              title: "Venus Flytrap: Natures Carnivorous Marvel",
-              context:
-                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
-              name: "Admin",
-              date: "14/Sep/2025",
-            },
-            {
-              link: "#",
-              altText: "feature property 2",
-              img: "./image/polar-bear.jpg",
-              title: "The Enigmatic World of Polar Bears",
-              context:
-                "Explore the resilient life of polar bears in the Arctic wilderness.",
-              name: "Admin",
-              date: "09/Nov/2025",
-            },
-            {
-              link: "#",
-              altText: "feature property 3",
-              img: "./image/pelican.jpg",
-              title: "Majestic Pelicans: Masters of Aerial Grace",
-              context:
-                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
-              name: "Admin",
-              date: "14/Jun/2025",
-            }
-
-          ],
-        };
-
-        // Get the Handlebars template
-        var featureSource = document.getElementById("featuresTemplate").innerHTML;
-        var featureTemplate = Handlebars.compile(featureSource);
-
-        // Render the template with data
-        var featureProperties = featureTemplate(featArr);
-
-        // Append the rendered object to container
-        document.querySelector("#featprop-container").innerHTML =
-        featureProperties;
-      });
-
-
-      // handle bar for Recommandations
-      document.addEventListener("DOMContentLoaded", function () {
-        var recArr = {
-          RecommandationArticles: [
-            {
-              link: "#",
-              altText: "property recommandation 1",
-              img: "./image/venus-flytrap.jpg",
-              title: "Venus Flytrap: Natures Carnivorous Marvel",
-              context:
-                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
-              name: "Admin",
-              date: "14/Sep/2025",
-            },
-            {
-              link: "#",
-              altText: "property recommandation 2",
-              img: "./image/polar-bear.jpg",
-              title: "The Enigmatic World of Polar Bears",
-              context:
-                "Explore the resilient life of polar bears in the Arctic wilderness.",
-              name: "Admin",
-              date: "09/Nov/2025",
-            },
-            {
-              link: "#",
-              altText: "property recommandation 3",
-              img: "./image/pelican.jpg",
-              title: "Majestic Pelicans: Masters of Aerial Grace",
-              context:
-                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
-              name: "Admin",
-              date: "14/Jun/2025",
-            }
-
-          ],
-        };
-
-        // Get the Handlebars template
-        var recommandSource = document.getElementById("recommandationsTemplate").innerHTML;
-        var recommandTemplate = Handlebars.compile(recommandSource);
-
-        // Render the template with data
-        var recommandArticles = recommandTemplate(recArr);
-
-        // Append the rendered object to container
-        document.querySelector("#recarticle-container").innerHTML =
-        recommandArticles;
-      });
-
-
+            // Append the rendered object to container
+            document.querySelector("#recarticle-container").innerHTML = recommandArticles;
+        });
     </script>
-    
 </body>
 </html>
