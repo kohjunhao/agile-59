@@ -3,45 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/userProfile.css" />
     <title>user profile Page</title>
 </head>
 <body>
 
     <header>
-        <div>
-            <!-- logo -->
-            <div>
-                <a href="/"><img src="" alt="logo" ></a>
+        <div class="header-container">
+            <div class="finder-logo">
+                <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
             </div>
 
-            <div>
-                <a href="/">Home</a>
-                <a href="/buyRentHome">Buy/rent</a>
-                <a href="/sellerHome">Sell</a>
-                <a href="/">New projects</a>
-                <a href="/tools">Tools</a>
-                <a href="/">Find agent</a>
+            <div class="nav-link-container">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/buyRentHome">Buy/rent</a>
+                    <a href="/sellerHome">Sell</a>
+                    <a href="/projectHome">New projects</a>
+                    <a href="/tools">Tools</a>
+                    <a href="#">Find agent</a>
+                </div>
             </div>
             
-            <!-- logout -->
-            <div>
+            <div class="userPfp">
                 <a href="/userProfile">welcome <%= user.user_name %></a>
+            </div>
+
+            <div class="logout-btn">
                 <form action="/logout" method="POST">
                     <button type="submit">Log Out</button>
                 </form>
             </div>
-
         </div>
     </header>
 
-    <div>
+    <div class="pfp-container">
         
-        <div>
+        <div class="user-pfp-header">
             <h1>Edit profile</h1>
         </div>
 
-        <div>
+        <div class="pfp-input-content">
             <form action="/userProfile" method="POST">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" value="<%= user.user_name %>" pattern="[A-Za-z]+"  required>
@@ -56,6 +58,53 @@
             </form>
         </div>
     </div>
+
+    <br>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <h3>NextDoorSG</h3>
+                <p>Follow us here:</p>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+         
+            <div class="footer-col">
+                <ul>
+                    <li><a href="/projectHome">New Projects</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="#">Find Agents</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
+   
+            <div class="footer-bottom">
+                <p><small>&copy;NextDoorSG. All rights reserved. Images are for illustrative purposes</small></p>
+                <p><small>Terms and conditions apply</small></p>
+            </div>
+        </div>
+    </footer>
+
 
 </body>
 </html>
