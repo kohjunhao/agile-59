@@ -93,6 +93,9 @@ app.use('/tools', toolsRoute);
 const callDisplayRoute = require('./routes/callDisplay');
 app.use('/callDisplay', callDisplayRoute);
 
+const userProfileRoute = require('./routes/userProfile');
+app.use('/userprofile', userProfileRoute);
+
 const projectHomeRoute = require('./routes/projectHome');
 app.use('/projectHome', projectHomeRoute);
 
