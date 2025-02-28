@@ -81,11 +81,9 @@ img {
     justify-content: center;
     background-color: #d2b48c;
     border-radius: 10px;
-    margin: 50px;
 }
 
 .topimgscontainer {
-    justify-content: center;
     align-items: center;
 }
 
@@ -198,13 +196,21 @@ img {
         gap: 10px;
     }
 
+    .imgLinkcontainer {
+        margin: 0;
+    }
+
+    .topimgscontainer {
+        padding-left: 6vw;
+    }
+
     .mainimgcontainer {
         display: block;
-        justify-content: center;
+        align-items: center;
     }
 
     .main-img {
-        width: 90vw;
+        width: 90%;
         font-family: Arial, sans-serif;
         line-height: 1.6;
         margin: 0 10px;
