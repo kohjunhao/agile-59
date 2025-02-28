@@ -81,9 +81,9 @@ img {
     justify-content: center;
     background-color: #d2b48c;
     border-radius: 10px;
+    margin: 50px;
 }
 
-/* Top images container styles */
 .topimgscontainer {
     justify-content: center;
     align-items: center;
@@ -101,35 +101,48 @@ img {
     margin: 0 10px;
 }
 
-.latheader {
+
+
+
+
+
+.latheader,
+.featheader,
+.recheader {
     font-size: 150%;
     text-align: center;
 }
 
-.LatestProjectsContainer {
+.LatestProjectsContainer,
+.LastestContainer,
+.FeaturePropertyContainer,
+.FeatureContainer,
+.RecommendationsArticleContainer,
+.RecommendContainer {
     display: flex;
     justify-content: center;
 }
 
-.LastestContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.latproject {
+.latproject,
+.featproperty,
+.recarticle {
     margin: 10px;
     background-color: #d2b48c;
     border-radius: 10px;
     padding: 20px;
 }
 
-.latproject a {
+.latproject a,
+.featproperty a,
+.recarticle a {
     text-decoration: none;
     color: black;
     font-size: 1.5rem;
 }
 
-.latproject a:hover {
+.latproject a:hover,
+.featproperty a:hover,
+.recarticle a:hover {
     color: #0056b3;
 }
 
@@ -140,6 +153,7 @@ img {
     background-color: #d2b48c;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .footer-row {
@@ -220,7 +234,9 @@ img {
         margin: 10px;
     }
 
-    .LastestContainer {
+    .LastestContainer,
+    .FeatureContainer,
+    .RecommendContainer {
         display: block;
     }
 
