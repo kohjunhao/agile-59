@@ -45,7 +45,8 @@
 }
 
 /* Login styles */
-.login a {
+.login a,
+.userlogin button {
     text-decoration: none;
     color: white;
     padding: 10px 15px; 
@@ -69,25 +70,22 @@
     max-width: 50%;
 }
 
-.userlogin p,
-.userlogin form,
-.userlogin button {
+.login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
     font-size: 1.5rem;
+    margin: 1vh auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.userlogin p,
+.userlogin button,
+.userlogin label,
+.userlogin input {
+    font-size: 1.5rem;
+    margin: 1vh auto;
+    align-items: center;
+}
 
 .footer-container {
     display: flex;
@@ -129,13 +127,13 @@
 }
 
 /* Responsive styles */
-@media (min-width: 1000px) {
+@media (min-width: 1325px) {
     .dropdown-content {
         display: block; /* Show links normally on larger screens */
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1325px) {
     .header-container {
         flex-direction: column;
         align-items: center;

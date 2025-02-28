@@ -35,13 +35,11 @@
 
     <div class="userlogin">
         <h1>Login</h1>
-        <form action="/login/authenticate" method="POST">
+        <form class="login-form" action="/login/authenticate" method="POST">
             <label for="usernameOrEmail">Username or Email:</label>
             <input type="text" id="usernameOrEmail" name="usernameOrEmail" required>
-            <br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <br>
             <button type="submit">Login</button>
         </form>
         <p style="color: red;"><%= errorMessage %></p>

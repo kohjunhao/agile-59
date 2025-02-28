@@ -155,13 +155,13 @@ td a {
 }
 
 /* Responsive styles */
-@media (min-width: 1000px) {
+@media (min-width: 1540px) {
     .dropdown-content {
         display: block; /* Show links normally on larger screens */
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1540px) {
     .header-container {
         flex-direction: column;
         align-items: flex-start;
