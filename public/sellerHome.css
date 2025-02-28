@@ -1,0 +1,226 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #d2b48c;
+    border-radius: 10px;
+}
+
+.finder-logo {
+    margin-right: auto;
+}
+
+/* Logo styles */
+.finder-logo img {
+    max-width: 30%;
+    border-radius: 10px;
+}
+
+/* Navigation styles */
+.nav-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+}
+
+/* user pfp styles */
+
+.userPfp {
+    margin-left: 15px;
+}
+
+.userPfp a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    border-radius: 5px; 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    transition: background-color 0.3s;
+}
+
+.userPfp a:hover {
+    background-color: #0056b3;
+}
+
+/* logout styles */
+
+.logout-btn {
+    margin-left: 15px;
+}
+
+.logout-btn button{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1em auto;
+}
+
+
+/* create/draft/article styles */
+
+.create-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+}
+
+.draft-container, .publish-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    background-color: #d2b48c;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.footer-row {
+    font-size: 1.5rem;
+}
+
+.footer-col ul {
+    font-size: 1.5rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-col ul li {
+    margin: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-col ul li a:hover {
+    color: #0056b3;
+}
+
+.footer-bottom {
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+}
+
+/* Responsive styles */
+@media (min-width: 1000px) {
+    .dropdown-content {
+        display: block; /* Show links normally on larger screens */
+    }
+}
+
+@media (max-width: 1000px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imgLinkcontainer {
+        margin: 0;
+    }
+
+    .topimgscontainer {
+        padding-left: 6vw;
+    }
+
+    .mainimgcontainer {
+        display: block;
+        align-items: center;
+    }
+
+    .main-img {
+        width: 90%;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0 10px;
+    }
+
+    .header-container {
+        align-items: center;
+        background-color: #d2b48c;
+        padding: 20px;
+    }
+    
+    .finder-logo {
+        margin: 0;
+    }
+
+    .finder-logo img{
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .nav-link-container, .login {
+        margin: 10px;
+    }
+
+    .footer-container {
+        display: block;
+        justify-content: center;
+        margin: 10px;
+    }
+
+    .footer-row,
+    .footer-col {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+}

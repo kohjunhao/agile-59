@@ -3,23 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/sellerHome.css" />
     <title>Sell page</title>
 </head>
 <body>
-    <div>
-        <a href="/userProfile">welcome <%= user.user_name %></a>
-        <form action="/logout" method="POST">
-            <button type="submit">Log Out</button>
-        </form>
-    </div>
 
-    <div>
+    <header>
+        <div class="header-container">
+            <div class="finder-logo">
+                <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
+            </div>
+
+            <div class="nav-link-container">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/buyRentHome">Buy/rent</a>
+                    <a href="/sellerHome">Sell</a>
+                    <a href="/projectHome">New projects</a>
+                    <a href="/tools">Tools</a>
+                    <a href="#">Find agent</a>
+                </div>
+            </div>
+            
+            <div class="userPfp">
+                <a href="/userProfile">welcome <%= user.user_name %></a>
+            </div>
+
+            <div class="logout-btn">
+                <form action="/logout" method="POST">
+                    <button type="submit">Log Out</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="create-container">
         <h2>Create new property for sale</h2>
         <a href="/sellerHome/create">Create a new property listing</a>
     </div>
     
-    <div>
+    <div class="draft-container">
         <h2>Draft property article</h2>
         <table border="1">
             <thead>
@@ -59,7 +83,7 @@
         </table>
     </div>
 
-    <div>
+    <div class="publish-container">
         <h2>Published property article</h2>
         <table border="1">
             <thead>
@@ -92,5 +116,50 @@
             </tbody>
         </table>
     </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <h3>NextDoorSG</h3>
+                <p>Follow us here:</p>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+         
+            <div class="footer-col">
+                <ul>
+                    <li><a href="/projectHome">New Projects</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="#">Find Agents</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
+   
+            <div class="footer-bottom">
+                <p><small>&copy;NextDoorSG. All rights reserved. Images are for illustrative purposes</small></p>
+                <p><small>Terms and conditions apply</small></p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
