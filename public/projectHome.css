@@ -10,6 +10,120 @@
 /* footer styling */
 
 
+/* project styling */
+
+.project-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.project-card{
+    position: relative;
+    max-width: 325px;
+    width: 325px;
+    height: auto;
+    margin: 1rem;
+    box-shadow: 0 5px 25px rgb(1, 1, 1 / 20%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-img{
+    max-width: 200px;
+}
+
+.project-img img{
+    max-width: 100%;
+    height: auto;
+}
+
+.project-info{
+    position: relative;
+    padding: 10px 20px 20px;
+}
+
+.project-info h2{
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.project-info a{
+    text-decoration: none;
+    color: #334;
+}
+
+.project-info h3{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.project-info p{
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.pagination{
+    text-align: center;
+    margin: 30px 30px 60px;
+    user-select: none;
+}
+
+.pagination li{
+    display: inline-block;
+    margin: 5px;
+}
+
+.pagination li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 45px;
+}
+
+.previous, .next{
+    width: 60px;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.current, .dots{
+    width: 45px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* upcming project styling */
 
 .upprobox{

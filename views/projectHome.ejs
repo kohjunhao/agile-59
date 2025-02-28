@@ -13,6 +13,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" 
      integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" 
      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
      <title>Project home page</title>
  </head>
  <body>
@@ -27,7 +28,7 @@
                  <a href="/">Home</a>
                  <a href="/buyRentHome">Buy/rent</a>
                  <a href="/sellerHome">Sell</a>
-                 <a href="/">New projects</a>
+                 <a href="/projectHome">New projects</a>
                  <a href="/tools">Tools</a>
                  <a href="/">Find agent</a>
              </div>
@@ -48,16 +49,16 @@
          <h2>Housing projects</h2>
        </div>
  
-       <div id="projectlistwrapper">
+       <div id="projectlistwrapper" class="project-container">
          <script id="hseProjectTemplate" type="text/x-handlebars-template">
            {{#each hseproject}}
-           <div>
-             <div>
-               <div>
+           <div class="project-content">
+             <div class="project-card" >
+               <div class="project-img">
                  <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" ></a>
                </div>
  
-               <div>
+               <div class="project-info">
                  <a href="{{link}}"><h2>{{hseingTitle}}</h2></a>
                  <p>{{projectType}}</p>
                  <h3>{{hseingAvilable}}</h3>
@@ -69,8 +70,19 @@
            {{/each}}
          </script>
      </div>
-       
  
+     <div class="pagination">
+       <li class=" page-item previous disable"><a class="page-link" href="#">Prev</a></li>
+       <li class="page-item current active"><a class="page-link" href="#">1</a></li>
+       <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+       <li class="page-item current"><a class="page-link" href="#">5</a></li>
+       <li class="page-item current"><a class="page-link" href="#">6</a></li>
+       <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+       <li class=" page-item current"><a class="page-link" href="#">10</a></li>
+       <li class="page-item next"><a class="page-link" href="#">Next</a></li>
+     </div>
+   
+     <br>
  
      <div class="upprobox">
  
@@ -146,7 +158,7 @@
           
             <div class="footer-col">
              <ul>
-                 <li><a href="#">New Projects</a></li>
+                 <li><a href="/projectHome">New Projects</a></li>
                  <li><a href="/tools">Tools</a></li>
                  <li><a href="#">Find Agents</a></li>
              </ul>
@@ -186,8 +198,48 @@
              {
                link:'#',
                alterText:'building',
-               img:'',
+               img:'./logo3.jpg',
                hseingTitle:'location1',
+               projectType:'BTO',
+               hseingAvilable:'available flat types:',
+               hseingType:'2 room',
+             },
+ 
+             {
+               link:'#',
+               alterText:'building',
+               img:'./logo3.jpg',
+               hseingTitle:'location2',
+               projectType:'BTO',
+               hseingAvilable:'available flat types:',
+               hseingType:'2/3 rooms',
+             },
+ 
+             {
+               link:'#',
+               alterText:'building',
+               img:'./logo3.jpg',
+               hseingTitle:'location3',
+               projectType:'SLB',
+               hseingAvilable:'available flat types:',
+               hseingType:'3/4/5 rooms',
+             },
+ 
+             {
+               link:'#',
+               alterText:'building',
+               img:'',
+               hseingTitle:'location4',
+               projectType:'SLB',
+               hseingAvilable:'available flat types:',
+               hseingType:'2/3/4/5 rooms',
+             },
+ 
+             {
+               link:'#',
+               alterText:'building',
+               img:'',
+               hseingTitle:'location5',
                projectType:'',
                hseingAvilable:'available flat types:',
                hseingType:'',
@@ -202,6 +254,80 @@
  
          document.querySelector("#projectlistwrapper").innerHTML = hsePros
        })
+ 
+       // housing project pagination
+ 
+       function getList(toatalpage, page, maxLength){
+         function range(start, end){
+           return Array.from(Array(end - start +1), (_,i)=> i+start)
+         }
+ 
+         var sideWith = maxLength < 9 ? 1 :2;
+         var leftWidth =(maxLength - sideWith *2 - 3) >> 1;
+         var rigtWidth =(maxLength - sideWith *2 - 3) >> 1;
+ 
+         if(toatalpage <= maxLength){
+           return range(1, maxLength - sideWith -1).concat(0,range(toatalpage-sideWith+1, toatalpage));
+         }
+ 
+         if(page >= toatalpage - sideWith -1 -rigtWidth){
+           return range(1, sideWith).concat(0, range(toatalpage - sideWith -1 -rigtWidth - leftWidth, toatalpage))
+         }
+ 
+         return range(1, sideWith).concat(0, range(page - leftWidth, page + rigtWidth), 0, range(toatalpage - sideWith + 1, toatalpage))
+       }
+ 
+       $(function(){
+         var numOfItem = $(".project-content .project-card").length;
+         // limitation of content per page
+         var limitPerPage = 3;
+         var totalpage = Math.ceil(numOfItem/limitPerPage);
+         //element visible in pagination
+         var paginationSize = 3;
+         var currentPage;
+ 
+         function showPage(whichPage){
+           if(whichPage < 1 || whichPage > totalpage) return false;
+ 
+           currentPage = whichPage;
+           $(".project-content .project-card").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+ 
+           $(".pagination li").slice(1, -1).remove();
+ 
+           getList(totalpage, currentPage, paginationSize).forEach(item =>{
+             $("<li>").addClass("page-item").addClass(item ? "current" : "dot").toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
+             .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next");
+           });
+ 
+           $(".previous").toggleClass("disable", currentPage === 1);
+           $(".next").toggleClass("disable", currentPage === totalpage);
+           return true;
+         }
+ 
+         $(".pagination").append(
+           $("<li>").addClass("page-item").addClass("previous").append($("<a>").addClass("page-link").attr({href:"javascript:void(0)"}).text("Prev")),
+           $("<li>").addClass("page-item").addClass("next").append($("<a>").addClass("page-link").attr({href:"javascript:void(0)"}).text("Next"))
+         )
+ 
+         $("project-content").show();
+         showPage(1);
+ 
+         $(document).on("click", ".pagination li.current:not(.active)", function(){
+           return showPage(+$(this).text());
+         });
+ 
+         $(".next").on("click", function(){
+           return showPage(currentPage + 1);
+         })
+ 
+         $(".previous").on("click", function(){
+           return showPage(currentPage - 1);
+         })
+ 
+ 
+       });
+ 
+ 
  
  
        // upcoming project handle bar
@@ -248,6 +374,27 @@
                upcomingFlatType:'',
              },
  
+             {
+               link: '#',
+               alterText:'building',
+               img:'',
+               upcomingTitle:'location5',
+               upcomingProjectType:'upcoming BTO',
+               upcomingFlatAvilable:'available flat types:',
+               upcomingFlatType:'',
+             },
+ 
+ 
+             {
+               link: '#',
+               alterText:'building',
+               img:'',
+               upcomingTitle:'location6',
+               upcomingProjectType:'upcoming BTO',
+               upcomingFlatAvilable:'available flat types:',
+               upcomingFlatType:'',
+             },
+ 
            ]
          };
          var upcomProSource = document.getElementById("upcomingTemplate").innerHTML;
@@ -260,20 +407,34 @@
  
        // loadmore button js
  
-       let loadmorebtn= document.querySelector('#loadmore');
-       let currentItems = 3;
+       document.addEventListener("DOMContentLoaded", function () {
+        let loadmorebtn = document.querySelector('#loadmore button');
+        let currentItems = 3;
  
-       loadmorebtn.onclick =() =>{
-        let upcomingboxes=[...document.querySelectorAll('.upprobox .upcomingwrapper .projbox')]
-        for(var i = currentItems; i<currentItems+3; i++){
-         upcomingboxes[i].style.display='flex';
-        }
-        currentItems+=3;
+        // Wait until Handlebars renders the content, then hide extra items
+        setTimeout(() => {
+            let upcomingboxes = document.querySelectorAll('.upprobox .upcomingwrapper > div');
  
-        if(currentItems >= upcomingboxess.length){
-          loadmorebtn.style.display='none';
-        }
-       }
+            upcomingboxes.forEach((box, index) => {
+              if (index >= currentItems) {
+                 box.style.display = "none";
+              }
+            });
+ 
+            loadmorebtn.addEventListener("click", () => {
+              for (let i = currentItems; i < currentItems + 3; i++) {
+                  if (upcomingboxes[i]) {
+                     upcomingboxes[i].style.display = "flex";
+                  }
+              }
+              currentItems += 3;
+ 
+              if (currentItems >= upcomingboxes.length) {
+                 loadmorebtn.style.display = "none";
+              }
+             });
+         }, 100); 
+       });
  
        // Q&A js script //
        const QAItemHeaders = document.querySelectorAll(".QA-item-header");
