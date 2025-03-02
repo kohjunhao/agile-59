@@ -1,7 +1,3 @@
-<!-- fpr project page -->
-
-<!-- https://www.youtube.com/watch?v=GQejHTFwyLo -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,51 +7,61 @@
     <title>Buy/rent page</title>
 </head>
 <body>
+
     <header>
-        <div>
-            <!-- logo -->
-            <div>
-                <a href="/"><img src="" alt="logo" ></a>
+        <div class="header-container">
+            <div class="finder-logo">
+                <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
             </div>
 
-            <div>
-                <a href="/">Home</a>
-                <a href="/buyRentHome">Buy/rent</a>
-                <a href="/sellerHome">Sell</a>
-                <a href="/">New projects</a>
-                <a href="/tools">Tools</a>
-                <a href="/">Find agent</a>
+            <div class="nav-link-container">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/buyRentHome">Buy/rent</a>
+                    <a href="/sellerHome">Sell</a>
+                    <a href="/projectHome">New projects</a>
+                    <a href="/tools">Tools</a>
+                    <a href="#">Find agent</a>
+                </div>
             </div>
-            
+                
             <!-- login -->
-            <div>
+            <div class="login">
                 <a href="/login">Login</a>
             </div>
-
         </div>
     </header>
     
     <!-- filter put here -->
 
+    <br>
 
-    <div>
+    <div class="article-container">
         <h2>Available houses</h2>
         <% if (articles.length > 0) { %>
 
-            <div>
+            <div class="article-card-wrapper">
                 <% articles.forEach(article => { %>
-                    <img src="<%= article.image_path %>" alt="Property Image" style="max-width: 200px;" >
-                    <a href="/buyRentArticle/<%= article.id %>"><%= article.title %></a>
-                    <p><%= article.description %></p>
-                    <p><%= article.published_date %></p>
+                  <div class="article-content">
+                    <div class="article-img">
+                      <img src="<%= article.image_path %>" alt="Property Image" >
+                    </div>
+
+                    <div class="info-content">
+                      <a href="/buyRentArticle/<%= article.id %>"><h3><%= article.title %></h3></a>
+                      <p><%= article.description %></p>
+                      <p><%= article.published_date %></p>
+                    </div>
+
+                  </div>
                 <% }); %>
 
-                
             </div>
 
-
         <% } else { %>
+          <div class="display-msg">
             <p>No article available at the moment.</p>
+          </div>
         <% } %>
     </div>
 
@@ -88,46 +94,47 @@
 
     <!-- footer -->
     <footer>
-        <div class=>
-          <div>
-            <P>Follow our offical social media accounts:</P>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-           </div>
-         
-           <div class="footer-col">
-            <ul>
-                <li><a href="#">New Projects</a></li>
-                <li><a href="/tools">Tools</a></li>
-                <li><a href="#">Find Agents</a></li>
-            </ul>
-           </div>
-
-           <div class="footer-col">
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">privacy Policy</a></li>
-                <li><a href="#">Term of Service</a></li>
-            </ul>
-           </div>
-
-           <div class="footer-col">
-            <ul>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Linceses</a></li>
-                <li><a href="#">Mobile App</a></li>
-                <li><a href="#">Term of Service</a></li>
-            </ul>
-           </div>
-   
-           <div class="footer-bottom">
-            <p><small>&copy;xxxx. All right reserve. Images are for illustrative purposes.Terms and conditions apply</small></p>
-           </div>
-   
+      <div class="footer-container">
+        <div class="footer-row">
+          <h3>NextDoorSG</h3>
+          <p>Follow us here:</p>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </div>
+         
+        <div class="footer-col">
+          <ul>
+            <li><a href="/projectHome">New Projects</a></li>
+            <li><a href="/tools">Tools</a></li>
+            <li><a href="#">Find Agents</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Term of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Mobile App</a></li>
+            <li><a href="#">Term of Service</a></li>
+          </ul>
+        </div>
+   
+        <div class="footer-bottom">
+          <p><small>&copy;NextDoorSG. All rights reserved. Images are for illustrative purposes</small></p>
+          <p><small>Terms and conditions apply</small></p>
+        </div>
+      </div>
     </footer>
 
     <script>

@@ -129,7 +129,7 @@
 /* Responsive styles */
 @media (min-width: 1325px) {
     .dropdown-content {
-        display: block; /* Show links normally on larger screens */
+        display: block; 
     }
 }
 
