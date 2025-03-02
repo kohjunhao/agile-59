@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/editArticle.css" />
     <title>Sell article edit Page</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
             <select id="housingType" name="housingType" required>
               <option value="HDB" <%= article.housingType === "HDB" ? "selected" : "" %>>HDB</option>
               <option value="Condo" <%= article.housingType === "Condo" ? "selected" : "" %>>Condo</option>
-              <option value="Private Property" <%= article.housingType === "Private Property" ? "selected" : "" %>>Private Property</option>
+              <option value="Private property" <%= article.housingType === "Private property" ? "selected" : "" %>>Private property</option>
               <option value="Others" <%= article.housingType === "Others" ? "selected" : "" %>>Others</option>
             </select><br>
 

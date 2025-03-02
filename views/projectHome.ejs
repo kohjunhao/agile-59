@@ -18,38 +18,36 @@
  </head>
  <body>
      <header>
-         <div>
-             <!-- logo -->
-             <div>
-                 <a href="/"><img src="" alt="logo" ></a>
-             </div>
+        <div class="header-container">
+          <div class="finder-logo">
+            <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
+          </div>
  
-             <div>
-                 <a href="/">Home</a>
-                 <a href="/buyRentHome">Buy/rent</a>
-                 <a href="/sellerHome">Sell</a>
-                 <a href="/projectHome">New projects</a>
-                 <a href="/tools">Tools</a>
-                 <a href="/">Find agent</a>
-             </div>
+          <div class="nav-link-container">
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/buyRentHome">Buy/rent</a>
+              <a href="/sellerHome">Sell</a>
+              <a href="#">New projects</a>
+              <a href="/tools">Tools</a>
+              <a href="/">Find agent</a>
+            </div>
+          </div>
              
-             <!-- login -->
-             <div>
-                 <a href="/login">Login</a>
-             </div>
+          <div class="login">
+            <a href="/login">Login</a>
+          </div>
  
-         </div>
+        </div>
      </header>
      
      <!-- filter put here -->
  
-     <div>
+      <div>
+        <h2>Housing projects</h2>
+      </div>
  
-       <div>
-         <h2>Housing projects</h2>
-       </div>
- 
-       <div id="projectlistwrapper" class="project-container">
+      <div id="projectlistwrapper" class="project-container">
          <script id="hseProjectTemplate" type="text/x-handlebars-template">
            {{#each hseproject}}
            <div class="project-content">
@@ -86,7 +84,7 @@
  
      <div class="upprobox">
  
-       <div>
+       <div class="upprobox-header">
          <h2>Upcoming projects</h2>
        </div>
        
@@ -147,9 +145,10 @@
  
      <!-- footer -->
      <footer>
-         <div class=>
-           <div>
-             <P>Follow our offical social media accounts:</P>
+         <div class="footer-container">
+           <div class="footer-row">
+             <h3>NextDoorSG</h3>
+             <p>Follow us here:</p>
              <a href="#"><i class="fa-brands fa-facebook"></i></a>
              <a href="#"><i class="fa-brands fa-twitter"></i></a>
              <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -183,7 +182,7 @@
             </div>
     
             <div class="footer-bottom">
-             <p><small>&copy;xxxx. All right reserve. Images are for illustrative purposes.Terms and conditions apply</small></p>
+             <p><small>&copy;NextDoorSG. All right reserve. Images are for illustrative purposes.Terms and conditions apply</small></p>
             </div>
     
          </div>
@@ -198,7 +197,7 @@
              {
                link:'#',
                alterText:'building',
-               img:'./logo3.jpg',
+               img:'/uploads/1738501017840.jpg',
                hseingTitle:'location1',
                projectType:'BTO',
                hseingAvilable:'available flat types:',
