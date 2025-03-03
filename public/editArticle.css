@@ -40,13 +40,13 @@
     color: #0056b3;
 }
 
-/* user pfp styles */
+/* user pfp link styles */
 
-.userPfp {
+.userPfp-link {
     margin-left: 15px;
 }
 
-.userPfp a {
+.userPfp-link a {
     text-decoration: none;
     color: white;
     padding: 10px 15px; 
@@ -57,7 +57,7 @@
     transition: background-color 0.3s;
 }
 
-.userPfp a:hover {
+.userPfp-link a:hover {
     background-color: #0056b3;
 }
 
