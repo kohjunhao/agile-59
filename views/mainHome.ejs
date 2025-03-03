@@ -45,15 +45,15 @@
     <!--Image slider-->
     <div class="imgslider-container">
         <div class="slide fade">
-            <img src="/uploads/1738501017840.jpg" alt="house1">
+            <img src="/sampleimages/1738501017840.jpg" alt="house1">
         </div>
 
         <div class="slide fade">
-            <img src="/uploads/1738553555496.jpg" alt="house2">
+            <img src="/sampleimages/1738553555496.jpg" alt="house2">
         </div>
 
         <div class="slide fade">
-            <img src="/uploads/1739388529796.jpg" alt="house3">
+            <img src="/sampleimages/1739388529796.jpg" alt="house3">
         </div>
 
         <a class="prev" onclick="changeImg(-1)">&#10094;</a>
@@ -75,15 +75,15 @@
             <script id="imgsTemplate" type="text/x-handlebars-template">
                 <div class="mainimgcontainer">
                     <div class="main-img">
-                        <a href=""><img src="/uploads/1738501017840.jpg" alt="imgside"></a>
+                        <a href=""><img src="/sampleimages/1738501017840.jpg" alt="imgside"></a>
                     </div>
 
                     <div class="main-img">
-                        <a href=""><img src="/uploads/1738553555496.jpg" alt="imgside"></a>
+                        <a href=""><img src="/sampleimages/1738553555496.jpg" alt="imgside"></a>
                     </div>
 
                     <div class="main-img">
-                        <a href=""><img src="/uploads/1739388529796.jpg" alt="imgside"></a>
+                        <a href=""><img src="/sampleimages/1739388529796.jpg" alt="imgside"></a>
                     </div>
                 </div>
 
@@ -119,16 +119,29 @@
     <div class="FeaturePropertyContainer">
         <div class="FeatureContainer" id="featprop-container">
             <script id="featuresTemplate" type="text/x-handlebars-template">
-                {{#each FeatureProperties}}
                 <div class="featproperty">
                     <div class="imgcontainer">
-                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
+                        <a href="{{link}}"><img src="sampleimages/featureimage1.jpg" alt="{{altText}}"></a>
                     </div>
-                    <a href="{{link}}"><h3>{{title}}</h3></a>
-                    <a href="{{link}}"><p>{{context}}</p></a>
-                    <a href="{{link}}"><p>{{title}}</p></a>
+                    <a href="{{link}}"><h3>Test</h3></a>
+                    <a href="{{link}}"><p>Test</p></a>
                 </div>
-                {{/each}}
+
+                <div class="featproperty">
+                    <div class="imgcontainer">
+                        <a href="{{link}}"><img src="sampleimages/featureimage2.jpg" alt="{{altText}}"></a>
+                    </div>
+                    <a href="{{link}}"><h3>Test</h3></a>
+                    <a href="{{link}}"><p>Test</p></a>
+                </div>
+
+                <div class="featproperty">
+                    <div class="imgcontainer">
+                        <a href="{{link}}"><img src="sampleimages/featureimage3.jpg" alt="{{altText}}"></a>
+                    </div>
+                    <a href="{{link}}"><h3>Test</h3></a>
+                    <a href="{{link}}"><p>Test</p></a>
+                </div>
             </script>
         </div>
     </div>
@@ -140,16 +153,29 @@
     <div class="RecommendationsArticleContainer">
         <div class="RecommendContainer" id="recarticle-container">
             <script id="recommandationsTemplate" type="text/x-handlebars-template">
-                {{#each RecommandationArticles}}
                 <div class="recarticle">
                     <div class="imgcontainer">
-                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
+                        <a href="https://www.edgeprop.sg/property-news/are-ecs-still-good-buy"><img src="sampleimages/reccoimage1.jpg" alt="Article Image"></a>
                     </div>
-                    <a href="{{link}}"><h3>{{title}}</h3></a>
-                    <a href="{{link}}"><p>{{context}}</p></a>
-                    <a href="{{link}}"><p>{{title}}</p></a>
+                    <a href="https://www.edgeprop.sg/property-news/are-ecs-still-good-buy"><h3>Are ECs still a good buy?</h3></a>
+                    <a href="https://www.edgeprop.sg/property-news/are-ecs-still-good-buy"><p>This article aims to explore if Executive Condominiums are still a good buy for homeowners in 2025</p></a>
                 </div>
-                {{/each}}
+
+                <div class="recarticle">
+                    <div class="imgcontainer">
+                        <a href="https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326"><img src="sampleimages/reccoimage2.jpg" alt="{{altText}}"></a>
+                    </div>
+                    <a href="https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326"><h3>Will Singapore’s property prices always rise, or is that a myth?</h3></a>
+                    <a href="https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326"><p>Exploring if increasing property prices are going to impact the current generation or is it all a ploy?</p></a>
+                </div>
+
+                <div class="recarticle">
+                    <div class="imgcontainer">
+                        <a href="https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil"><img src="sampleimages/reccoimage3.jpg" alt="{{altText}}"></a>
+                    </div>
+                    <a href="https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil"><h3>Three-bedroom unit at Watertown going for $2.4 mil</h3></a>
+                    <a href="https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil"><p>Come and explore a new record-breaking price for this property in Singapore!</p></a>
+                </div>
             </script>
         </div>
     </div>
@@ -249,19 +275,19 @@
                     {
                         link: "#",
                         altText: "img 1",
-                        img: "/uploads/1739304987448.jpg",
+                        img: "/sampleimages/1739304987448.jpg",
                     }
                 ],
                 sideimgs: [
                     {
                         link: "#",
                         altText: "img 1",
-                        img: "/uploads/1739388529796.jpg",
+                        img: "/sampleimages/1739388529796.jpg",
                     },
                     {
                         link: "#",
                         altText: "img 2",
-                        img: "/uploads/1739388529796.jpg",
+                        img: "/sampleimages/1739388529796.jpg",
                     }
                 ]
             };

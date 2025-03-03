@@ -153,6 +153,10 @@
     max-width: 100%;
 }
 
+.imgcontainer img {
+    max-width: 100%;
+}
+
 .latheader,
 .featheader,
 .recheader {
@@ -177,6 +181,7 @@
     background-color: #d2b48c;
     border-radius: 10px;
     padding: 20px;
+    width: 30%;
 }
 
 .latproject a,
@@ -284,6 +289,12 @@
     .FeatureContainer,
     .RecommendContainer {
         display: block;
+    }
+
+    .latproject,
+    .featproperty,
+    .recarticle {
+        width: 90vw;
     }
 
     .footer-container {
