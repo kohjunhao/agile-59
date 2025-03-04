@@ -45,3 +45,4 @@ Register a new account
 * nodemon
 * express session
 * mustache handle bar
+* Jquery

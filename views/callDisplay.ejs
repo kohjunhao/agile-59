@@ -4,50 +4,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/buyRentArticle.css" />
+    <link rel="stylesheet" type="text/css" href="/callDisplay.css" />
     <title>call displaying page</title>
   </head>
   <body>
 
     <header>
-      <div>
-          <!-- logo -->
-          <div>
-              <a href="/"><img src="" alt="logo" ></a>
-          </div>
+      <div class="header-container">
+        <div class="finder-logo">
+          <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
+        </div>
 
-          <div>
-              <a href="/">Home</a>
-              <a href="/buyRentHome">Buy/rent</a>
-              <a href="/sellerHome">Sell</a>
-              <a href="/">New projects</a>
-              <a href="/tools">Tools</a>
-              <a href="/">Find agent</a>
+        <div class="nav-link-container">
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/buyRentHome">Buy/rent</a>
+            <a href="/sellerHome">Sell</a>
+            <a href="/projectHome">New projects</a>
+            <a href="/tools">Tools</a>
+            <a href="#">Find agent</a>
           </div>
-          
-          <!-- log out -->
-          <div>
-            <form action="/logout" method="POST">
-              <button type="submit">Log Out</button>
-            </form>
-          </div>
+        </div>
 
+        <div class="userPfp-link">
+          <a href="/userProfile">Edit profile</a>
+        </div>
+
+        <div class="logout-btn">
+          <form action="/logout" method="POST">
+            <button type="submit">Log Out</button>
+          </form>
+        </div>
       </div>
     </header>
 
-    <div>
-        <div>
-            <h2> Seller's contect info </h2>
+    <div class="info-display-container">
+      <div class="info-display-header">
+        <h2> Seller's contect info </h2>
+      </div>
+
+      <div class="info-display-content">
+        <% if (user) { %>
+          <P>Thank you for using the seller service, <%= user.user_name %>!</p>
+          <p><%= seller.sellerName %> Contact Number: <%= seller.contactNumber %></p>
+        <% } else { %>
+          <p>You must be logged in to access this page.</p>
+        <% } %>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-row">
+          <h3>NextDoorSG</h3>
+          <p>Follow us here:</p>
+          <a href="#"><img src="https://img.icons8.com/ios/50/facebook--v1.png" alt="Facebook logo" ></a>
+          <a href="#"><img src="https://img.icons8.com/ios/50/twitterx--v1.png" alt="X logo" ></i></a>
+          <a href="#"><img src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="Insta logo" ></i></a>
+          <a href="#"><img src="https://img.icons8.com/ios/50/youtube-play--v1.png" alt="Youtube logo" ></i></a>
+        </div>
+       
+        <div class="footer-col">
+          <ul>
+            <li><a href="/projectHome">New Projects</a></li>
+            <li><a href="/tools">Tools</a></li>
+            <li><a href="#">Find Agents</a></li>
+          </ul>
         </div>
 
-        <div>
-            <% if (user) { %>
-                <P>Thank you for using the seller service, <%= user.user_name %>!</p>
-                <p><%= seller.sellerName %> Contact Number: <%= seller.contactNumber %></p>
-              <% } else { %>
-                <p>You must be logged in to access this page.</p>
-              <% } %>
-        </div>
-    </div>
+          <div class="footer-col">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Term of Service</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <ul>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Licenses</a></li>
+              <li><a href="#">Mobile App</a></li>
+              <li><a href="#">Term of Service</a></li>
+            </ul>
+          </div>
+ 
+          <div class="footer-bottom">
+            <p><small>&copy;NextDoorSG. All rights reserved. Images are for illustrative purposes</small></p>
+            <p><small>Terms and conditions apply</small></p>
+          </div>
+      </div>
+    </footer>
+
   </body>
 </html>
