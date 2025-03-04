@@ -1,5 +1,3 @@
-<!-- https://www.youtube.com/watch?v=dr8Emho-kYo-->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,67 +11,96 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
-    <div>
-      <div>
-        <img
-          src="<%= article.image_path %>"
-          alt="Property Image"
-          style="max-width: 200px"
-        />
-      </div>
 
-      <div>
-        <h1><%= article.title %></h1>
-        <h3>Home Description:</h3>
-        <p><%= article.description %></p>
-        <h3>Home insights:</h3>
-        <p><%= article.insight %></p>
-      </div>
-
-      <div>
-        <form action="/" method="GET">
-          <button type="submit">Shortlist</button>
-        </form>
-
-        <form action="/" method="GET">
-          <button type="submit">Share</button>
-        </form>
-
-        <div>
-          <p><strong>Seller name:</strong> <%= article.sellerName %></p>
-          <p><%= article.sellerDetails %></p>
+    <header>
+      <div class="header-container">
+        <div class="finder-logo">
+          <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
         </div>
 
-        <form action="/callDisplay/<%= article.id %>" method="GET">
-          <button type="submit">Call</button>
-        </form>
-
-        <form action="/" method="GET">
-          <button type="submit">Whatapp</button>
-        </form>
+        <div class="nav-link-container">
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/buyRentHome">Buy/rent</a>
+            <a href="/sellerHome">Sell</a>
+            <a href="/projectHome">New projects</a>
+            <a href="/tools">Tools</a>
+            <a href="#">Find agent</a>
+          </div>
+        </div>
+              
+        <div class="login">
+          <a href="/login">Login</a>
+        </div>
       </div>
+    </header>
 
-      <div>
-        <p><strong>House location:</strong> <%= article.location %></p>
-        <h3>interactive map</h3>
-        <!-- API CALL FOR Google map base on the location insert here -->
-      </div>
+    <div class="article-container">
+      <div class="article -contents">
+        <div class="article-img">
+          <img
+            src="<%= article.image_path %>"
+            alt="Property Image"
+          />
+        </div>
+  
+        <div class="article-description">
+          <h1><%= article.title %></h1>
+          <h3>Home Description:</h3>
+          <p><%= article.description %></p>
+          <h3>Home insights:</h3>
+          <p><%= article.insight %></p>
+        </div>
+  
+        <div class="article-button">
+          <div class="article-button-row">
+            <form action="/" method="GET">
+              <button type="submit">Shortlist</button>
+            </form>
+        
+            <form action="/" method="GET">
+              <button type="submit">Share</button>
+            </form>
+          </div>
+        
+          <div class="article-seller-info">
+            <p><strong>Seller name:</strong> <%= article.sellerName %></p>
+            <p><%= article.sellerDetails %></p>
+          </div>
+        
+          <div class="article-button-row">
+            <form action="/callDisplay/<%= article.id %>" method="GET">
+              <button type="submit">Call</button>
+            </form>
+        
+            <form action="/" method="GET">
+              <button type="submit">Whatapp</button>
+            </form>
+          </div>
+        </div>
+        
+  
+        <div class="article-location">
+          <p><strong>House location:</strong> <%= article.location %></p>
+          <h3>interactive map</h3>
+          <!-- API CALL FOR Google map base on the location insert here -->
+        </div>
+  
+        <div class="article-fac">
+          <h3>Home amenities:</h3>
+          <p><%= article.amenities %></p>
+          <h3>Home facilities:</h3>
+          <p><%= article.facilities %></p>
+        </div>
 
-      <div>
-        <h3>Home amenities:</h3>
-        <p><%= article.amenities %></p>
-        <h3>Home facilities:</h3>
-        <p><%= article.facilities %></p>
       </div>
     </div>
 
-    <br>
+    <div class="recheader">
+      <h3>Recommandations</h3>
+    </div>
 
     <div class="RecommandationsArticleContainer">
-      <div class="recheader">
-        <h3>Recommandations</h3>
-      </div>
-
       <div class="RecommandContainer" id="recarticle-container">
         <script id="recommandationsTemplate" type="text/x-handlebars-template">
           {{#each RecommandationArticles}}
@@ -114,6 +141,50 @@
         </div>
       </div>
     </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-row">
+          <h3>NextDoorSG</h3>
+          <p>Follow us here:</p>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+       
+        <div class="footer-col">
+          <ul>
+            <li><a href="/projectHome">New Projects</a></li>
+            <li><a href="/tools">Tools</a></li>
+            <li><a href="#">Find Agents</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Term of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Mobile App</a></li>
+            <li><a href="#">Term of Service</a></li>
+          </ul>
+        </div>
+ 
+        <div class="footer-bottom">
+          <p><small>&copy;NextDoorSG. All rights reserved. Images are for illustrative purposes</small></p>
+          <p><small>Terms and conditions apply</small></p>
+        </div>
+      </div>
+    </footer>
 
     <script>
       // handle bar for Recommandations

@@ -1,13 +1,131 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #d2b48c;
+    border-radius: 10px;
 }
 
-/* header styling */
+.finder-logo {
+    margin-right: auto;
+}
+
+/* Logo styles */
+.finder-logo img {
+    max-width: 30%;
+    border-radius: 10px;
+}
+
+/* Navigation styles */
+.nav-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+}
+
+.login {
+    margin-left: 15px;
+}
+
+/* Login styles */
+.login a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    border-radius: 5px; 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    transition: background-color 0.3s;
+}
+
+.login a:hover {
+    background-color: #0056b3;
+}
+
+/* article styling */
+
+.article-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.article-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.article-img img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.article-main {
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+}
+
+.article-description {
+    text-align: left;
+}
 
 
-/* footer styling */
+.article-button {
+    position: absolute;
+    top: calc(122%); 
+    right: calc(10.5%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+
+.article-button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+.article-button button {
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 120px;
+    text-align: center;
+}
+
+.article-button button:hover {
+    background-color: #bfbfbf;
+}
+
+.article-seller-info {
+    text-align: left; 
+    margin-right: 120px;
+}
 
 
 /* reccomand styling */
@@ -66,15 +184,49 @@
     margin-bottom: 0.5rem;
 }
 
+/* FQA styling */
+
+.recheader {
+    font-size: 150%;
+    text-align: center;
+}
+
+
+.RecommandationsArticleContainer,
+.RecommandContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+.recarticle {
+    margin: 10px;
+    background-color: #d2b48c;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.recarticle a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.recarticle a:hover {
+    color: #0056b3;
+}
+
 
 /* FQA styling */
 
 .QAsectioncontainer .QAheader h3{
-    padding-left: 0.5rem;
+    text-align: center;
+    padding-top: 1rem;
 }
 
 .QA{
-    width: 90%;
+    width: 100%;
     max-width: 9999px;
     padding-left: 0.5rem;
 }
@@ -120,3 +272,104 @@
     border-image: linear-gradient(to right);
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    background-color: #d2b48c;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.footer-row {
+    font-size: 1.5rem;
+}
+
+.footer-col ul {
+    font-size: 1.5rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-col ul li {
+    margin: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-col ul li a:hover {
+    color: #0056b3;
+}
+
+.footer-bottom {
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+}
+
+/* Responsive styles */
+@media (min-width: 1325px) {
+    .dropdown-content {
+        display: block; 
+    }
+}
+
+@media (max-width: 1325px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        background-color: #d2b48c;
+        padding: 20px;
+    }
+
+    .imgLinkcontainer {
+        margin: 0;
+    }
+
+    .topimgscontainer {
+        padding-left: 6vw;
+    }
+
+    .mainimgcontainer {
+        display: block;
+        align-items: center;
+    }
+
+    .main-img {
+        width: 90%;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0 10px;
+    }
+    
+    .finder-logo {
+        margin: 0;
+    }
+
+    .finder-logo img{
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .nav-link-container, .login {
+        margin: 10px;
+    }
+
+
+    .footer-container {
+        display: block;
+        justify-content: center;
+        margin: 10px;
+    }
+
+    .footer-row,
+    .footer-col {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+}
