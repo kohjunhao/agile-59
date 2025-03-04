@@ -119,29 +119,16 @@
     <div class="FeaturePropertyContainer">
         <div class="FeatureContainer" id="featprop-container">
             <script id="featuresTemplate" type="text/x-handlebars-template">
+                {{#each FeatureProperties}}
                 <div class="featproperty">
                     <div class="imgcontainer">
-                        <a href="{{link}}"><img src="sampleimages/featureimage1.jpg" alt="{{altText}}"></a>
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
                     </div>
-                    <a href="{{link}}"><h3>Test</h3></a>
-                    <a href="{{link}}"><p>Test</p></a>
+                    <a href="{{link}}"><h3>{{title}}</h3></a>
+                    <a href="{{link}}"><p>{{context}}</p></a>
+                    <a href="{{link}}"><p>{{title}}</p></a>
                 </div>
-
-                <div class="featproperty">
-                    <div class="imgcontainer">
-                        <a href="{{link}}"><img src="sampleimages/featureimage2.jpg" alt="{{altText}}"></a>
-                    </div>
-                    <a href="{{link}}"><h3>Test</h3></a>
-                    <a href="{{link}}"><p>Test</p></a>
-                </div>
-
-                <div class="featproperty">
-                    <div class="imgcontainer">
-                        <a href="{{link}}"><img src="sampleimages/featureimage3.jpg" alt="{{altText}}"></a>
-                    </div>
-                    <a href="{{link}}"><h3>Test</h3></a>
-                    <a href="{{link}}"><p>Test</p></a>
-                </div>
+                {{/each}}
             </script>
         </div>
     </div>
@@ -153,29 +140,16 @@
     <div class="RecommendationsArticleContainer">
         <div class="RecommendContainer" id="recarticle-container">
             <script id="recommandationsTemplate" type="text/x-handlebars-template">
+                {{#each RecommandationArticles}}
                 <div class="recarticle">
                     <div class="imgcontainer">
-                        <a href="https://www.edgeprop.sg/property-news/are-ecs-still-good-buy"><img src="sampleimages/reccoimage1.jpg" alt="Article Image"></a>
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
                     </div>
-                    <a href="https://www.edgeprop.sg/property-news/are-ecs-still-good-buy"><h3>Are ECs still a good buy?</h3></a>
-                    <a href="https://www.edgeprop.sg/property-news/are-ecs-still-good-buy"><p>This article aims to explore if Executive Condominiums are still a good buy for homeowners in 2025</p></a>
+                    <a href="{{link}}"><h3>{{title}}</h3></a>
+                    <a href="{{link}}"><p>{{context}}</p></a>
+                    <a href="{{link}}"><p>{{title}}</p></a>
                 </div>
-
-                <div class="recarticle">
-                    <div class="imgcontainer">
-                        <a href="https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326"><img src="sampleimages/reccoimage2.jpg" alt="{{altText}}"></a>
-                    </div>
-                    <a href="https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326"><h3>Will Singapore’s property prices always rise, or is that a myth?</h3></a>
-                    <a href="https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326"><p>Exploring if increasing property prices are going to impact the current generation or is it all a ploy?</p></a>
-                </div>
-
-                <div class="recarticle">
-                    <div class="imgcontainer">
-                        <a href="https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil"><img src="sampleimages/reccoimage3.jpg" alt="{{altText}}"></a>
-                    </div>
-                    <a href="https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil"><h3>Three-bedroom unit at Watertown going for $2.4 mil</h3></a>
-                    <a href="https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil"><p>Come and explore a new record-breaking price for this property in Singapore!</p></a>
-                </div>
+                {{/each}}
             </script>
         </div>
     </div>
@@ -361,7 +335,7 @@
                     {
                         link: "#",
                         altText: "feature property 1",
-                        img: "./image/venus-flytrap.jpg",
+                        img: "sampleimages/featureimage1.jpg",
                         title: "Venus Flytrap: Natures Carnivorous Marvel",
                         context: "Uncover the secrets of the Venus Flytrap, a botanical predator.",
                         name: "Admin",
@@ -370,7 +344,7 @@
                     {
                         link: "#",
                         altText: "feature property 2",
-                        img: "./image/polar-bear.jpg",
+                        img: "sampleimages/featureimage2.jpg",
                         title: "The Enigmatic World of Polar Bears",
                         context: "Explore the resilient life of polar bears in the Arctic wilderness.",
                         name: "Admin",
@@ -379,7 +353,7 @@
                     {
                         link: "#",
                         altText: "feature property 3",
-                        img: "./image/pelican.jpg",
+                        img: "sampleimages/featureimage3.jpg",
                         title: "Majestic Pelicans: Masters of Aerial Grace",
                         context: "Explore the elegance and ecological significance of pelicans in their natural habitat.",
                         name: "Admin",
@@ -404,29 +378,29 @@
             var recArr = {
                 RecommandationArticles: [
                     {
-                        link: "#",
-                        altText: "property recommandation 1",
-                        img: "./image/venus-flytrap.jpg",
-                        title: "Venus Flytrap: Natures Carnivorous Marvel",
-                        context: "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+                        link: "https://www.edgeprop.sg/property-news/are-ecs-still-good-buy",
+                        altText: "reccomended articles 1",
+                        img: "sampleimages/reccoimage1.jpg",
+                        title: "Are ECs still a good buy?",
+                        context: "This article aims to explore if Executive Condominiums are still a good buy for homeowners in 2025",
                         name: "Admin",
                         date: "14/Sep/2025",
                     },
                     {
-                        link: "#",
-                        altText: "property recommandation 2",
-                        img: "./image/polar-bear.jpg",
-                        title: "The Enigmatic World of Polar Bears",
-                        context: "Explore the resilient life of polar bears in the Arctic wilderness.",
+                        link: "https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326",
+                        altText: "reccomended articles 2",
+                        img: "sampleimages/reccoimage2.jpg",
+                        title: "Will Singapore’s property prices always rise, or is that a myth?",
+                        context: "Exploring if increasing property prices are going to impact the current generation or is it all a ploy?",
                         name: "Admin",
                         date: "09/Nov/2025",
                     },
                     {
-                        link: "#",
-                        altText: "property recommandation 3",
-                        img: "./image/pelican.jpg",
-                        title: "Majestic Pelicans: Masters of Aerial Grace",
-                        context: "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+                        link: "https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil",
+                        altText: "reccomended articles ",
+                        img: "sampleimages/reccoimage3.jpg",
+                        title: "Three-bedroom unit at Watertown going for $2.4 mil",
+                        context: "Come and explore a new record-breaking price for this property in Singapore!",
                         name: "Admin",
                         date: "14/Jun/2025",
                     }
