@@ -134,6 +134,7 @@
 }
 
 .topimgscontainer {
+    display: flex;
     align-items: center;
 }
 
@@ -257,6 +258,7 @@
     }
 
     .topimgscontainer {
+        display: block;
         padding-left: 6vw;
     }
 

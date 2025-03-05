@@ -71,20 +71,13 @@
     <div class="imgLinkcontainer">
         <div class="topimgscontainer" id="topimgs-container">
             <script id="imgsTemplate" type="text/x-handlebars-template">
+                {{#each mainimgs}}
                 <div class="mainimgcontainer">
                     <div class="main-img">
-                        <a href="/tools"><img src="/sampleimages/1738501017840.jpg" alt="Tools"></a>
-                    </div>
-
-                    <div class="main-img">
-                        <a href="/projectHome"><img src="/sampleimages/1738553555496.jpg" alt="New project"></a>
-                    </div>
-
-                    <div class="main-img">
-                        <a href="#"><img src="/sampleimages/1739388529796.jpg" alt="Find agent"></a>
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}"></a>
                     </div>
                 </div>
-
+                {{/each}}
             </script>
         </div>
     </div>    
@@ -242,22 +235,23 @@
             var imglist = {
                 mainimgs: [
                     {
+                        link: "/tools",
+                        altText: "img 1",
+                        img: "/sampleimages/1739304987448.jpg",
+                    },
+
+                    {
                         link: "#",
                         altText: "img 1",
                         img: "/sampleimages/1739304987448.jpg",
-                    }
-                ],
-                sideimgs: [
+                    },
+                    
                     {
                         link: "#",
                         altText: "img 1",
-                        img: "/sampleimages/1739388529796.jpg",
+                        img: "/sampleimages/1739304987448.jpg",
                     },
-                    {
-                        link: "#",
-                        altText: "img 2",
-                        img: "/sampleimages/1739388529796.jpg",
-                    }
+
                 ]
             };
 
