@@ -64,6 +64,9 @@
     position: relative;
     max-width: 100%;
     overflow: hidden;
+    padding: 50px;
+    background-color: #d2b48c;
+    border-radius: 10px;
 }
 
 .slide{
@@ -148,10 +151,12 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0 10px;
+    text-align: center;
 }
 
 .main-img img {
     max-width: 100%;
+    margin: 10px auto;
 }
 
 .imgcontainer img {
