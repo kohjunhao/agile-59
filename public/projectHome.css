@@ -79,6 +79,7 @@
     justify-content: center; 
     align-items: center;
     scrollbar-width: none; 
+    background-color: #d2b48c;
 }
 
 .project-content {
@@ -86,6 +87,7 @@
     flex-direction: row; 
     flex-wrap: nowrap; 
     gap: 20px;
+    border-radius: 10px;
 }
 
 .project-card {
@@ -95,6 +97,8 @@
     box-shadow: 0 5px 25px rgba(1, 1, 1, 0.2);
     border-radius: 10px;
     overflow: hidden;
+    background-color: lightgray;
+    margin: 10px auto;
 }
 
 .project-img {
@@ -166,9 +170,11 @@
 
 .upprobox{
     display: flexbox;
-    width: 100%;
+    width: 50%;
+    margin: 10px auto;
     height: auto;
     background: #d2b48c;
+    border-radius: 10px;
 }
 
 .upprobox-header h2{
@@ -198,6 +204,7 @@
     overflow: hidden;
     background: #fff;
     display: none;
+    border-radius: 10px;
 }
 
 .upprobox .upcomingwrapper .projbox:nth-child(1),
@@ -206,16 +213,16 @@
     display: flex;
 }
 
-.projbox .buildingimg{
+.buildingimg {
     flex: 1 1 200px;
-    width: 100%;
-    height: auto;
+    max-width: 30%;
+    border-radius: 10px;
 }
 
 .buildingimg img{
     display: flex;
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    padding: 10px;
 }
 
 .upprocontent{
@@ -252,6 +259,7 @@
     height: auto;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
 #loadmore button{
@@ -272,15 +280,15 @@
 }
 
 .QA{
-    width: 100%;
-    max-width: 9999px;
-    padding-left: 0.5rem;
+    max-width: 80%;
+    margin: 10px auto;
 }
 
 .QA-item{
     margin: 1rem 0;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 
 .QA-item-header{
@@ -292,6 +300,7 @@
     align-items: center;
     position: relative;
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .QA-item-header::after{
@@ -315,6 +324,7 @@
     line-height: 1.5rem;
     border-top: 3px solid;
     border-image: linear-gradient(to right);
+    font-size: 1.5rem;
 }
 
 .footer-container {
@@ -402,6 +412,22 @@
 
     .nav-link-container, .login {
         margin: 10px;
+    }
+
+    .project-container {
+        display: block;
+    }
+
+    .project-content {
+        justify-content: center;
+    }
+
+    .upprobox{
+        width: 100%;
+    }
+
+    .QA{
+        max-width: 90%;
     }
 
     .footer-container {
