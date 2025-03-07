@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/tools.css">
-    <title>Tools Page</title>
+    <link rel="stylesheet"  type="text/css" href="/tools.css" />
+    <title>tool page</title>
+    
 </head>
 <body>
     <header>
@@ -23,97 +24,122 @@
                     <a href="#">Find agent</a>
                 </div>
             </div>
-
+                
+            <!-- login -->
             <div class="login">
                 <a href="/login">Login</a>
             </div>
         </div>
     </header>
 
-    <!-- Mortgage Calculator Section -->
-    <div class="calculator-container">
-        <h1>Mortgage Calculator</h1>
-        <form id="mortgage-form">
-            <label for="loan_amount">Loan Amount ($):</label>
-            <input type="number" id="loan_amount" required>
-            
-            <label for="interest_rate">Interest Rate (%):</label>
-            <input type="number" step="0.01" id="interest_rate" required>
-            
-            <label for="duration_years">Duration (Years):</label>
-            <input type="number" id="duration_years" required>
 
-            <button type="submit">Calculate</button>
-        </form>
-
-        <div id="mortgage-result">
-            <h2>Results</h2>
-            <p><strong>Monthly Payment:</strong> <span id="monthly_payment"></span></p>
-            <p><strong>Annual Payment:</strong> <span id="annual_payment"></span></p>
-            <p><strong>Total Interest Paid:</strong> <span id="total_interest"></span></p>
+    <div>
+        <div>
+            <h1>Affordability calculator</h1>
         </div>
+        
+        <!--API call for affordablity cal here and remove the h1 place holder-->
+        <div>
+            <h1>Latest projects</h1>
+        </div>
+
+        <div>
+            <h2>What is an affordablity calulator</h2>
+
+             <!--content for affordability cal put here-->
+            <div>
+                <p></p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Affordability Calculator Section -->
-    <div class="calculator-container">
-        <h1>Affordability Calculator</h1>
-        <form id="affordability-form">
-            <label for="monthly_income">Monthly Income ($):</label>
-            <input type="number" id="monthly_income" required>
-            
-            <label for="other_debts">Other Monthly Debt Payments ($):</label>
-            <input type="number" id="other_debts" required>
-            
-            <label for="downpayment">Downpayment ($):</label>
-            <input type="number" id="downpayment" required>
-            
-            <label for="interest_rate_afford">Interest Rate (%):</label>
-            <input type="number" step="0.01" id="interest_rate_afford" required>
-            
-            <label for="duration_years_afford">Loan Duration (Years):</label>
-            <input type="number" id="duration_years_afford" required>
-
-            <button type="submit">Calculate</button>
-        </form>
-
-        <div id="affordability-result">
-            <h2>Results</h2>
-            <p><strong>Maximum Home Price:</strong> <span id="max_home_price"></span></p>
-            <p><strong>Estimated Loan Amount:</strong> <span id="afford_loan_amount"></span></p>
+    <div>
+        <div>
+            <h1>Mortgage calculator</h1>
         </div>
+        
+        <!--API call for Mortgage cal here and remove the h1 place holder-->
+        <div>
+            <h1>Latest projects</h1>
+        </div>
+
+        <div>
+            <h2>What is an Mortgage calulator</h2>
+
+             <!--content for Mortgage cal put here-->
+            <div>
+                <p></p>
+            </div>
+            
+        </div>
+
     </div>
 
-    <!-- Stamp Duty Calculator Section -->
-    <div class="calculator-container">
-        <h1>Stamp Duty Calculator</h1>
-        <form id="stamp-duty-form">
-            <label for="property_price">Property Purchase Price ($):</label>
-            <input type="number" id="property_price" required>
-
-            <button type="submit">Calculate</button>
-        </form>
-
-        <div id="stamp-duty-result">
-            <h2>Results</h2>
-            <p><strong>Stamp Duty Amount:</strong> <span id="stamp_duty"></span></p>
+    <div>
+        <div>
+            <h1>Stamp Duty calculator</h1>
         </div>
-    </div>
+        
+        <!--API call for Stamp Duty cal here and remove the h1 place holder-->
+        <div>
+            <h1>Latest projects</h1>
+        </div>
 
-    <script src="/tools.js"></script>
+        <div>
+            <h2>What is an Stamp Duty calulator</h2>
+
+             <!--content for Stamp Duty cal put here-->
+            <div>
+                <p></p>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
         <div class="footer-container">
             <div class="footer-row">
                 <h3>NextDoorSG</h3>
                 <p>Follow us here:</p>
-                <a href="#"><img src="https://img.icons8.com/ios/50/facebook--v1.png" alt="Facebook logo"></a>
-                <a href="#"><img src="https://img.icons8.com/ios/50/twitterx--v1.png" alt="X logo"></a>
-                <a href="#"><img src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="Instagram logo"></a>
-                <a href="#"><img src="https://img.icons8.com/ios/50/youtube-play--v1.png" alt="YouTube logo"></a>
+                <a href="#"><img src="https://img.icons8.com/ios/50/facebook--v1.png" alt="Facebook logo" ></a>
+                <a href="#"><img src="https://img.icons8.com/ios/50/twitterx--v1.png" alt="X logo" ></i></a>
+                <a href="#"><img src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="Insta logo" ></i></a>
+                <a href="#"><img src="https://img.icons8.com/ios/50/youtube-play--v1.png" alt="Youtube logo" ></i></a>
+            </div>
+         
+            <div class="footer-col">
+                <ul>
+                    <li><a href="/projectHome">New Projects</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="#">Find Agents</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Term of Service</a></li>
+                </ul>
+            </div>
+   
+            <div class="footer-bottom">
+                <p><small>&copy;NextDoorSG. All rights reserved. Images are for illustrative purposes</small></p>
+                <p><small>Terms and conditions apply</small></p>
             </div>
         </div>
     </footer>
 
-    <script src="/tools-client.js"></script>
 </body>
 </html>
