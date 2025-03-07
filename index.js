@@ -1,29 +1,27 @@
-// Set up express, bodyparser and EJS
+// Set up express, bodyparser, and EJS
 const express = require('express');
 const session = require('express-session');
+const path = require("path");
 const app = express();
 const port = 3000;
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Set the app to use ejs for rendering
+// Set the app to use EJS for rendering
 app.set('view engine', 'ejs');
 
-// Set location of static files
-app.use(express.static(__dirname + '/public'));
-
+// Set location of static files (including frontend JavaScript)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up SQLite
-// Items in the global namespace are accessible throughout the node application
 const sqlite3 = require('sqlite3').verbose();
 global.db = new sqlite3.Database('./database.db', function (err) {
     if (err) {
         console.error(err);
-        // Bail out if we can't connect to the DB
-        process.exit(1);
+        process.exit(1); // Exit if DB connection fails
     } else {
         console.log("Database connected");
-        // Tell SQLite to pay attention to foreign key constraints
         global.db.run("PRAGMA foreign_keys=ON");
     }
 });
@@ -40,7 +38,6 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-
 // Middleware to restrict sell tab access to admin, seller, and agent only
 function requireSellerAccess(req, res, next) {
     if (!req.session.userId) {
@@ -56,7 +53,7 @@ function requireSellerAccess(req, res, next) {
     });
 }
 
-// Handle to logout and destory the seassion
+// Logout and destroy session
 app.post('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -67,8 +64,7 @@ app.post('/logout', (req, res) => {
     });
 });
 
-// Add all the route handlers to the app under the paths
-
+// Load route handlers
 const loginRoute = require('./routes/login');
 app.use('/login', loginRoute);
 
@@ -79,7 +75,7 @@ const sellerHomeRoutes = require('./routes/sellerHome');
 app.use('/sellerHome', requireSellerAccess, sellerHomeRoutes);
 
 const editArticle = require('./routes/editArticle');
-app.use('/editArticle', editArticle );
+app.use('/editArticle', editArticle);
 
 const buyRentHomeRoutes = require('./routes/buyRentHome');
 app.use('/buyRentHome', buyRentHomeRoutes);
@@ -88,7 +84,7 @@ const buyRentArticleRoute = require('./routes/buyRentArticle');
 app.use('/buyRentArticle', buyRentArticleRoute);
 
 const toolsRoute = require('./routes/tools');
-app.use('/tools', toolsRoute);
+app.use('/tools', toolsRoute); // ✅ Corrected route prefix
 
 const callDisplayRoute = require('./routes/callDisplay');
 app.use('/callDisplay', callDisplayRoute);
@@ -99,13 +95,7 @@ app.use('/userprofile', userProfileRoute);
 const projectHomeRoute = require('./routes/projectHome');
 app.use('/projectHome', projectHomeRoute);
 
-// Make the web application listen for HTTP requests
+// Start server
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
-
-
-
-
-
-
