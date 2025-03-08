@@ -64,7 +64,7 @@
     max-width: 400px;
     margin: auto;
     padding: 20px;
-    background: #f9f9f9;
+    background: #d2b48c;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -102,6 +102,18 @@
 
 .calculator-container button:hover {
     background: #0056b3;
+}
+
+#loan_amount,
+#interest_rate,
+#duration_years,
+#monthly_income,
+#other_debts,
+#downpayment,
+#interest_rate_afford,
+#duration_years_afford,
+#property_price {
+    max-width: 95%;
 }
 
 #mortgage-result {

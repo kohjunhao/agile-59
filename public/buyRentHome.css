@@ -68,6 +68,7 @@
     width: 100%;
     height: auto;
     background: #d2b48c;
+    border-radius: 10px;
 }
 
 .article-container h2{
@@ -96,6 +97,7 @@
     justify-content: center;
     background: #fff;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .article-img{
@@ -149,15 +151,15 @@
 }
 
 .QA{
-    width: 100%;
-    max-width: 9999px;
-    padding-left: 0.5rem;
+    max-width: 80%;
+    margin: 10px auto;
 }
 
 .QA-item{
     margin: 1rem 0;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 
 .QA-item-header{
@@ -169,6 +171,7 @@
     align-items: center;
     position: relative;
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .QA-item-header::after{
@@ -185,7 +188,6 @@
 .QA-item-body{
     max-height: 0;
     overflow: hidden;
-
 } 
 
 .QA-item-body-content{
@@ -193,8 +195,8 @@
     line-height: 1.5rem;
     border-top: 3px solid;
     border-image: linear-gradient(to right);
+    font-size: 1.5rem;
 }
-
 
 .footer-container {
     display: flex;
@@ -272,6 +274,10 @@
 
     .userlogin {
         max-width: 100%;
+    }
+
+    .QA {
+        max-width: 90%;
     }
 
     .footer-container {

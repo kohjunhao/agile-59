@@ -93,7 +93,7 @@
     </div>
 
     <div class="recheader">
-        <h3>Recommandations</h3>
+        <h3>Reccommended Articles</h3>
     </div>
 
     <div class="RecommandationsArticleContainer">
@@ -106,7 +106,6 @@
                     </div>
                     <a href="{{link}}"><h3>{{title}}</h3></a>
                     <a href="{{link}}"><p>{{context}}</p></a>
-                    <a href="{{link}}"><p>{{title}}</p></a>
                 </div>
                 {{/each}}
             </script>
@@ -118,21 +117,21 @@
     <!-- Q&A section -->
     <div class="QAsectioncontainer">
       <div class="QAheader">
-        <h3>FAQ</h3>
+        <h2>FAQ</h2>
       </div>
 
       <div class="QA">
         <div class="QA-item">
-          <div class="QA-item-header">qns 1 put here</div>
+          <div class="QA-item-header">What are the differences between the housing types in Singapore?</div>
           <div class="QA-item-body">
-            <div class="QA-item-body-content">ans 1 put here</div>
+            <div class="QA-item-body-content">For a full, comprehensive guide on the different housing properties in Singapore, you can read about it <a href="https://www.propertyguru.com.sg/property-guides/the-different-types-of-housing-in-singapore-9916">here</a></div>
           </div>
         </div>
 
         <div class="QA-item">
-          <div class="QA-item-header">qns 2 put here</div>
+          <div class="QA-item-header">What is the difference between a freehold and leasehold property in Singapore</div>
           <div class="QA-item-body">
-            <div class="QA-item-body-content">ans 2 put here</div>
+            <div class="QA-item-body-content">Freehold properties grant owners indefinite ownership, meaning they can hold the property for generations without worrying about lease expiration. These properties tend to retain their value better and are generally more expensive due to their long-term security and desirability.<br><br>On the other hand, leasehold properties come with a fixed tenure, usually 99 years or, in some cases, 999 years. The shorter the remaining lease, the more the property may depreciate in value. When the lease expires, ownership reverts to the government unless it is renewed. Despite this limitation, leasehold properties are more affordable, making them attractive to buyers looking for a lower entry price.</div>
           </div>
         </div>
       </div>
@@ -188,36 +187,35 @@
         var recArr = {
           RecommandationArticles: [
             {
-              link: "#",
-              altText: "venus-flytrap",
-              img: "./image/venus-flytrap.jpg",
-              title: "Venus Flytrap: Natures Carnivorous Marvel",
-              context:
-                "Uncover the secrets of the Venus Flytrap, a botanical predator.",
+              link: "https://www.edgeprop.sg/property-news/are-ecs-still-good-buy",
+              altText: "reccomended articles 1",
+              img: "/sampleimages/reccoimage1.jpg",
+
+              title: "Are ECs still a good buy?",
+              context: "This article aims to explore if Executive Condominiums are still a good buy for homeowners in 2025",
               name: "Admin",
               date: "14/Sep/2025",
             },
             {
-              link: "#",
-              altText: "polar bear",
-              img: "./image/polar-bear.jpg",
-              title: "The Enigmatic World of Polar Bears",
-              context:
-                "Explore the resilient life of polar bears in the Arctic wilderness.",
+              link: "https://www.channelnewsasia.com/commentary/singapore-housing-prices-hdb-affordability-demographics-ageing-singles-low-birth-rates-4923326",
+              altText: "reccomended articles 2",
+              img: "/sampleimages/reccoimage2.jpg",
+
+              title: "Will Singapore’s property prices always rise, or is that a myth?",
+              context: "Exploring if increasing property prices are going to impact the current generation or is it all a ploy?",
               name: "Admin",
               date: "09/Nov/2025",
             },
             {
-              link: "#",
-              altText: "pelican",
-              img: "./image/pelican.jpg",
-              title: "Majestic Pelicans: Masters of Aerial Grace",
-              context:
-                "Explore the elegance and ecological significance of pelicans in their natural habitat.",
+              link: "https://www.edgeprop.sg/property-news/three-bedroom-unit-watertown-going-24-mil",
+              altText: "reccomended articles 3",
+              img: "/sampleimages/reccoimage3.jpg",
+
+              title: "Three-bedroom unit at Watertown going for $2.4 mil",
+              context: "Come and explore a new record-breaking price for this property in Singapore!",
               name: "Admin",
               date: "14/Jun/2025",
             }
-
           ],
         };
 
