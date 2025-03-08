@@ -127,6 +127,10 @@
     margin-right: 120px;
 }
 
+#map{
+    width: 100%;
+    min-height: 400px;
+}
 
 /* reccomand styling */
 

@@ -1,120 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/buyRentArticle.css" />
-    <title>buy/rent article page</title>
-    <!--Handlebars-->
+    <title>Buy/Rent Article Page</title>
+
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4H-GJN8NesqK6OG9LEC5k7mZ1Y3dwZE&callback=initMap&libraries=places"></script>
+
+    <!-- Handlebars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" 
-    integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  </head>
-  <body>
+        integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
 
     <header>
-      <div class="header-container">
-        <div class="finder-logo">
-          <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
+        <div class="header-container">
+            <div class="finder-logo">
+                <a href="/"><img class="logo" src="/logo3.jpg" alt="NextDoorSG logo"></a>
+            </div>
+            <div class="nav-link-container">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/buyRentHome">Buy/rent</a>
+                    <a href="/sellerHome">Sell</a>
+                    <a href="/projectHome">New projects</a>
+                    <a href="/tools">Tools</a>
+                    <a href="#">Find agent</a>
+                </div>
+            </div>
+            <div class="login">
+                <a href="/login">Login</a>
+            </div>
         </div>
-
-        <div class="nav-link-container">
-          <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/buyRentHome">Buy/rent</a>
-            <a href="/sellerHome">Sell</a>
-            <a href="/projectHome">New projects</a>
-            <a href="/tools">Tools</a>
-            <a href="#">Find agent</a>
-          </div>
-        </div>
-              
-        <div class="login">
-          <a href="/login">Login</a>
-        </div>
-      </div>
     </header>
 
     <div class="article-container">
-      <div class="article -contents">
-        <div class="article-img">
-          <img
-            src="<%= article.image_path %>"
-            alt="Property Image"
-          />
-        </div>
-  
-        <div class="article-description">
-          <h1><%= article.title %></h1>
-          <h3>Home Description:</h3>
-          <p><%= article.description %></p>
-          <h3>Home insights:</h3>
-          <p><%= article.insight %></p>
-        </div>
-  
-        <div class="article-button">
-          <div class="article-button-row">
-            <form action="/" method="GET">
-              <button type="submit">Shortlist</button>
-            </form>
-        
-            <form action="/" method="GET">
-              <button type="submit">Share</button>
-            </form>
-          </div>
-        
-          <div class="article-seller-info">
-            <p><strong>Seller name:</strong> <%= article.sellerName %></p>
-            <p><%= article.sellerDetails %></p>
-          </div>
-        
-          <div class="article-button-row">
-            <form action="/callDisplay/<%= article.id %>" method="GET">
-              <button type="submit">Call</button>
-            </form>
-        
-            <form action="/" method="GET">
-              <button type="submit">Whatapp</button>
-            </form>
-          </div>
-        </div>
-        
-  
-        <div class="article-location">
-          <p><strong>House location:</strong> <%= article.location %></p>
-          <h3>interactive map</h3>
-          <!-- API CALL FOR Google map base on the location insert here -->
-        </div>
-  
-        <div class="article-fac">
-          <h3>Home amenities:</h3>
-          <p><%= article.amenities %></p>
-          <h3>Home facilities:</h3>
-          <p><%= article.facilities %></p>
-        </div>
+        <div class="article-contents">
+            <div class="article-img">
+                <img src="<%= article.image_path %>" alt="Property Image" />
+            </div>
 
-      </div>
+            <div class="article-description">
+                <h1><%= article.title %></h1>
+                <h3>Home Description:</h3>
+                <p><%= article.description %></p>
+                <h3>Home Insights:</h3>
+                <p><%= article.insight %></p>
+            </div>
+
+            <div class="article-button">
+                <div class="article-button-row">
+                    <form action="/" method="GET">
+                        <button type="submit">Shortlist</button>
+                    </form>
+                    <form action="/" method="GET">
+                        <button type="submit">Share</button>
+                    </form>
+                </div>
+                <div class="article-seller-info">
+                    <p><strong>Seller Name:</strong> <%= article.sellerName %></p>
+                    <p><%= article.sellerDetails %></p>
+                </div>
+
+                <div class="article-button-row">
+                  <form action="/callDisplay/<%= article.id %>" method="GET">
+                    <button type="submit">Call</button>
+                  </form>
+              
+                  <form action="/" method="GET">
+                    <button type="submit">Whatapp</button>
+                  </form>
+                </div>
+            </div>
+
+            <!-- Google Maps Section -->
+            <div class="article-location">
+                <p><strong>House Location:</strong> <%= article.location %></p>
+                <h3>Interactive Map</h3>
+                <div id="map" ></div>
+            </div>
+
+            <div class="article-fac">
+                <h3>Home Amenities:</h3>
+                <p><%= article.amenities %></p>
+                <h3>Home Facilities:</h3>
+                <p><%= article.facilities %></p>
+            </div>
+        </div>
     </div>
 
     <div class="recheader">
-      <h3>Recommandations</h3>
+        <h3>Recommandations</h3>
     </div>
 
     <div class="RecommandationsArticleContainer">
-      <div class="RecommandContainer" id="recarticle-container">
-        <script id="recommandationsTemplate" type="text/x-handlebars-template">
-          {{#each RecommandationArticles}}
-            <div class="recarticle">
-              <div class="imgcontainer">
-                <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
-              </div>
-              <a href="{{link}}"><h3>{{title}}</h3></a>
-              <a href="{{link}}"><p>{{context}}</p></a>
-              <a href="{{link}}"><p>{{title}}</p></a>
-            </div>
-          {{/each}}
-        </script>
-      </div>
+        <div class="RecommandContainer" id="recarticle-container">
+            <script id="recommandationsTemplate" type="text/x-handlebars-template">
+                {{#each RecommandationArticles}}
+                <div class="recarticle">
+                    <div class="imgcontainer">
+                        <a href="{{link}}"><img src="{{img}}" alt="{{altText}}" /></a>
+                    </div>
+                    <a href="{{link}}"><h3>{{title}}</h3></a>
+                    <a href="{{link}}"><p>{{context}}</p></a>
+                    <a href="{{link}}"><p>{{title}}</p></a>
+                </div>
+                {{/each}}
+            </script>
+        </div>
     </div>
     
     <br>
@@ -262,5 +258,44 @@
         });
       });
     </script>
+
+<script>
+  function initMap() {
+      var location = "<%= article.location %>"; // Get user-inputted address
+      console.log("Location from article.location:", location); // DEBUGGING LOG
+
+      var geocoder = new google.maps.Geocoder();
+      var mapOptions = {
+          zoom: 15,
+          center: { lat: 1.3521, lng: 103.8198 } // Default to Singapore
+      };
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      // Convert address into lat/lng using Geocoding API
+      geocoder.geocode({ address: location }, function(results, status) {
+          if (status === "OK") {
+              var propertyLocation = results[0].geometry.location;
+              map.setCenter(propertyLocation);
+
+              new google.maps.Marker({
+                  map: map,
+                  position: propertyLocation,
+                  title: "Property Location"
+              });
+              console.log("Geocoded location:", propertyLocation); // DEBUGGING LOG
+          } else {
+              console.error("Geocode failed:", status);
+              alert("Could not find location: " + location);
+          }
+      });
+  }
+
+  // Ensure initMap is globally available for Google API callback
+  window.initMap = initMap;
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4H-GJN8NesqK6OG9LEC5k7mZ1Y3dwZE&callback=initMap&libraries=places"></script>
+
+
   </body>
 </html>
