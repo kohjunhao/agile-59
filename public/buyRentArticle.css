@@ -89,29 +89,26 @@
 }
 
 .article-description {
-    text-align: left;
+    text-align: center;
 }
 
-
 .article-button {
-    position: absolute;
-    top: calc(122%); 
-    right: calc(10.5%);
-    display: flex;
+    position: relative; /* Changed from absolute to relative */
+    display: flex; /* Ensure it can align with the location */
     flex-direction: column;
-    align-items: baseline; 
+    align-items: center; 
     background-color: lightgray;
     padding: 10px;
     border-radius: 10px;
+    max-width: 50%;
+    margin: 50px auto;
 }
-
 
 .article-button-row {
     display: flex;
-    justify-content: flex-end;
     gap: 10px;
+    margin: 10px auto;
 }
-
 
 .article-button button {
     border: none;
@@ -129,11 +126,11 @@
 
 .article-seller-info {
     text-align: left; 
-    margin-right: 120px;
+    margin: 10px auto;
 }
 
 #map{
-    width: 80%;
+    width: 100%;
     min-height: 400px;
 }
 
@@ -148,14 +145,6 @@
 .RecommandationsArticleContainer .recheader h3{
     padding-left: 0.5rem;
 }
-
-/* .RecommandationsArticleContainer .RecommandContainer{
-    display: flex;
-    grid:auto/auto auto auto;
-    grid-gap: 1.5rem;
-    padding: 0.5rem;
-    text-align: left;
-} */
 
 .RecommandationsArticleContainer .RecommandContainer {
     display: flex;
@@ -201,13 +190,11 @@
     text-align: center;
 }
 
-
 .RecommandationsArticleContainer,
 .RecommandContainer {
     display: flex;
     justify-content: center;
 }
-
 
 .recarticle {
     width: 30%;
@@ -216,7 +203,6 @@
     border-radius: 10px;
     padding: 20px;
 }
-
 
 .recarticle a {
     text-decoration: none;
@@ -227,7 +213,6 @@
 .recarticle a:hover {
     color: #0056b3;
 }
-
 
 /* FQA styling */
 
