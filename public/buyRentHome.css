@@ -87,7 +87,7 @@
     margin: 1em 0;
 }
 
-.article-content{
+.article-content {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
